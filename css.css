@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  background: #565279;
+}
+
+.outerWrapper {
+	width: 1200px;
+	height: 600px;
+	position: relative;
+	border: 5px solid;
+	margin-left: 40px;
+}
+
+.outerWrapper svg {
+	position: absolute;
+}
+
+.outerWrapper svg path {
+	fill:none; 
+	/* stroke:#DABDD8;
+	stroke-width:1; */
+}
+
+.outerWrapper svg polygon {
+	fill:orange; 
+}
+.outerWrapper svg circle {
+	fill:orange; 
+	stroke:black;
+	stroke-width:2;
+}
