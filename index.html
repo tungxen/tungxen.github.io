@@ -272,7 +272,36 @@ word-break: keep-all;
 	  time = setTimeout(function(){ $('.ui-selected').removeClass('ui-selected'); }, 2000);
 	  }
 	}); */
+	$('.ui-state-default').click(function (){
+		$('.ui-state-default.ui-selected').removeClass('ui-selected');
+		$(this).addClass('ui-selected');
+			  text = $(this).find('.romaji').text();
+		  if(text.length == 1) {
+			myFunction(text+text);
+		  } else {
+			switch(text) {
+			  case 'fu':
+				text = "hu";
+				break;
+			  case 'shi':
+				text = "si";
+				break;
+			  case 'chi':
+				text = "ti";
+				break;
+			  case 'tsu':
+				text = "tu";
+				break;
+			  default:
+				break;
+			}
+			myFunction(text);
+		  }
+		  clearTimeout(time);
+		  time = setTimeout(function(){ $('.ui-selected').removeClass('ui-selected'); }, 2000);
+	});
   } );
+  
   function myFunction(s) {
 	  var x = $("#myAudio");
 	  x.attr("src", "amthanh/" + s + ".mp3");
@@ -282,23 +311,18 @@ word-break: keep-all;
 // $( "#selectable" ).selectable( "destroy" );
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
-
   // While there remain elements to shuffle...
   while (0 !== currentIndex) {
-
     // Pick a remaining element...
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex -= 1;
-
     // And swap it with the current element.
     temporaryValue = array[currentIndex];
     array[currentIndex] = array[randomIndex];
     array[randomIndex] = temporaryValue;
   }
-
   return array;
 }
-
 // Used like so
 arr = shuffle(arrmain);
 texthtml = '';
@@ -311,19 +335,4 @@ $('#selectable').html(texthtml);
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
