@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Selectable - Display as grid</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="style.css">
+ 
+  <style>
+  #feedback { font-size: 1.4em; }
+  #selectable .ui-selecting { background: #FECA40; }
+  #selectable .ui-selected { background: #F39814; color: white; }
+  #selectable { list-style-type: none; margin: 0; padding: 0; }
+  #selectable li { margin: 3px; padding: 1px; float: left; width: 70px; height: 60px; font-size: 2em; text-align: center;
+word-break: keep-all;
+	position: relative;
+  }
+  #selectable li .romaji{ position: absolute; bottom: 0px; font-size: 0.7em; left: 20px; visibility:hidden; }
+  #selectable li.ui-selected>.romaji{ visibility:visible;}
+  </style>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+</head>
+<body>
+<ol id="selectable">
+<li class="ui-state-default hira"><div>あ</div><div class=romaji>a</div></li>
+<li class="ui-state-default hira"><div>い</div><div class=romaji>i</div></li>
+<li class="ui-state-default hira"><div>う</div><div class=romaji>u</div></li>
+<li class="ui-state-default hira"><div>え</div><div class=romaji>e</div></li>
+<li class="ui-state-default hira"><div>お</div><div class=romaji>o</div></li>
+<li class="ui-state-default hira"><div>か</div><div class=romaji>ka</div></li>
+<li class="ui-state-default hira"><div>き</div><div class=romaji>ki</div></li>
+<li class="ui-state-default hira"><div>く </div><div class=romaji>ku</div></li>
+<li class="ui-state-default hira"><div>け</div><div class=romaji>ke</div></li>
+<li class="ui-state-default hira"><div>こ</div><div class=romaji>ko</div></li>
+<li class="ui-state-default hira"><div>さ</div><div class=romaji>sa</div></li>
+<li class="ui-state-default hira"><div>し</div><div class=romaji>shi</div></li>
+<li class="ui-state-default hira"><div>す</div><div class=romaji>su</div></li>
+<li class="ui-state-default hira"><div>せ</div><div class=romaji>se</div></li>
+<li class="ui-state-default hira"><div>そ</div><div class=romaji>so</div></li>
+<li class="ui-state-default hira"><div>た</div><div class=romaji>ta</div></li>
+<li class="ui-state-default hira"><div>ち</div><div class=romaji>chi</div></li>
+<li class="ui-state-default hira"><div>つ</div><div class=romaji>tsu</div></li>
+<li class="ui-state-default hira"><div>て</div><div class=romaji>te</div></li>
+<li class="ui-state-default hira"><div>と</div><div class=romaji>to</div></li>
+<li class="ui-state-default hira"><div>な</div><div class=romaji>na</div></li>
+<li class="ui-state-default hira"><div>に</div><div class=romaji>ni</div></li>
+<li class="ui-state-default hira"><div>ぬ</div><div class=romaji>nu</div></li>
+<li class="ui-state-default hira"><div>ね</div><div class=romaji>ne</div></li>
+<li class="ui-state-default hira"><div>の</div><div class=romaji>no</div></li>
+<li class="ui-state-default hira"><div>は</div><div class=romaji>ha</div></li>
+<li class="ui-state-default hira"><div>ひ</div><div class=romaji>hi</div></li>
+<li class="ui-state-default hira"><div>ふ</div><div class=romaji>fu</div></li>
+<li class="ui-state-default hira"><div>へ</div><div class=romaji>he</div></li>
+<li class="ui-state-default hira"><div>ほ</div><div class=romaji>ho</div></li>
+<li class="ui-state-default hira"><div>ま</div><div class=romaji>ma</div></li>
+<li class="ui-state-default hira"><div>み</div><div class=romaji>mi</div></li>
+<li class="ui-state-default hira"><div>む</div><div class=romaji>mu</div></li>
+<li class="ui-state-default hira"><div>め</div><div class=romaji>me</div></li>
+<li class="ui-state-default hira"><div>も</div><div class=romaji>mo</div></li>
+<li class="ui-state-default hira"><div>や</div><div class=romaji>ya</div></li>
+<li class="ui-state-default hira"><div>ゆ</div><div class=romaji>yu</div></li>
+<li class="ui-state-default hira"><div>よ</div><div class=romaji>yo</div></li>
+<li class="ui-state-default hira"><div>ら</div><div class=romaji>ra</div></li>
+<li class="ui-state-default hira"><div>り</div><div class=romaji>ri</div></li>
+<li class="ui-state-default hira"><div>る</div><div class=romaji>ru</div></li>
+<li class="ui-state-default hira"><div>れ</div><div class=romaji>re</div></li>
+<li class="ui-state-default hira"><div>ろ</div><div class=romaji>ro</div></li>
+<li class="ui-state-default hira"><div>わ</div><div class=romaji>wa</div></li>
+<li class="ui-state-default hira"><div>を</div><div class=romaji>o</div></li>
+<li class="ui-state-default hira"><div>ん</div><div class=romaji>n</div></li>
+<li class="ui-state-default hira dau"><div>が</div><div class=romaji>ga</div></li>
+<li class="ui-state-default hira dau"><div>ぎ</div><div class=romaji>gi</div></li>
+<li class="ui-state-default hira dau"><div>ぐ</div><div class=romaji>gu</div></li>
+<li class="ui-state-default hira dau"><div>げ</div><div class=romaji>ge</div></li>
+<li class="ui-state-default hira dau"><div>ご</div><div class=romaji>go</div></li>
+<li class="ui-state-default hira dau"><div>ざ</div><div class=romaji>za</div></li>
+<li class="ui-state-default hira dau"><div>じ</div><div class=romaji>ji</div></li>
+<li class="ui-state-default hira dau"><div>ず</div><div class=romaji>zu</div></li>
+<li class="ui-state-default hira dau"><div>ぜ</div><div class=romaji>ze</div></li>
+<li class="ui-state-default hira dau"><div>ぞ</div><div class=romaji>zo</div></li>
+<li class="ui-state-default hira dau"><div>だ</div><div class=romaji>da</div></li>
+<li class="ui-state-default hira dau"><div>ぢ</div><div class=romaji>ji</div></li>
+<li class="ui-state-default hira dau"><div>づ</div><div class=romaji>zu</div></li>
+<li class="ui-state-default hira dau"><div>で</div><div class=romaji>de</div></li>
+<li class="ui-state-default hira dau"><div>ど</div><div class=romaji>do</div></li>
+<li class="ui-state-default hira dau"><div>ば</div><div class=romaji>ba</div></li>
+<li class="ui-state-default hira dau"><div>び</div><div class=romaji>bi</div></li>
+<li class="ui-state-default hira dau"><div>ぶ</div><div class=romaji>bu</div></li>
+<li class="ui-state-default hira dau"><div>べ</div><div class=romaji>be</div></li>
+<li class="ui-state-default hira dau"><div>ぼ</div><div class=romaji>bo</div></li>
+<li class="ui-state-default hira dau"><div>ぱ</div><div class=romaji>pa</div></li>
+<li class="ui-state-default hira dau"><div>ぴ</div><div class=romaji>pi</div></li>
+<li class="ui-state-default hira dau"><div>ぷ</div><div class=romaji>pu</div></li>
+<li class="ui-state-default hira dau"><div>ぺ</div><div class=romaji>pe</div></li>
+<li class="ui-state-default hira dau"><div>ぽ</div><div class=romaji>po</div></li>
+<li class="ui-state-default hira truong"><div>きゃ</div><div class=romaji>kya</div></li>
+<li class="ui-state-default hira truong"><div>きゅ</div><div class=romaji>kyu</div></li>
+<li class="ui-state-default hira truong"><div>きょ</div><div class=romaji>kyo</div></li>
+<li class="ui-state-default hira truong"><div>しゃ</div><div class=romaji>sha</div></li>
+<li class="ui-state-default hira truong"><div>しゅ</div><div class=romaji>shu</div></li>
+<li class="ui-state-default hira truong"><div>しょ</div><div class=romaji>sho</div></li>
+<li class="ui-state-default hira truong"><div>ちゃ</div><div class=romaji>cha</div></li>
+<li class="ui-state-default hira truong"><div>ちゅ</div><div class=romaji>chu</div></li>
+<li class="ui-state-default hira truong"><div>ちょ</div><div class=romaji>cho</div></li>
+<li class="ui-state-default hira truong"><div>にゃ</div><div class=romaji>nya</div></li>
+<li class="ui-state-default hira truong"><div>にゅ</div><div class=romaji>nyu</div></li>
+<li class="ui-state-default hira truong"><div>にょ</div><div class=romaji>nyo</div></li>
+<li class="ui-state-default hira truong"><div>ひゃ</div><div class=romaji>hya</div></li>
+<li class="ui-state-default hira truong"><div>ひゅ</div><div class=romaji>hyu</div></li>
+<li class="ui-state-default hira truong"><div>ひょ</div><div class=romaji>hyo</div></li>
+<li class="ui-state-default hira truong"><div>みゃ</div><div class=romaji>mya</div></li>
+<li class="ui-state-default hira truong"><div>みゅ</div><div class=romaji>myu</div></li>
+<li class="ui-state-default hira truong"><div>みょ</div><div class=romaji>myo</div></li>
+<li class="ui-state-default hira truong"><div>りゃ</div><div class=romaji>rya</div></li>
+<li class="ui-state-default hira truong"><div>りゅ</div><div class=romaji>ryu</div></li>
+<li class="ui-state-default hira truong"><div>りょ</div><div class=romaji>ryo</div></li>
+<li class="ui-state-default hira truong"><div>ぎゃ</div><div class=romaji>gya</div></li>
+<li class="ui-state-default hira truong"><div>ぎゅ</div><div class=romaji>gyu</div></li>
+<li class="ui-state-default hira truong"><div>ぎょ</div><div class=romaji>gyo</div></li>
+<li class="ui-state-default hira truong"><div>じゃ</div><div class=romaji>ja</div></li>
+<li class="ui-state-default hira truong"><div>じゅ</div><div class=romaji>ju</div></li>
+<li class="ui-state-default hira truong"><div>じょ</div><div class=romaji>jo</div></li>
+<li class="ui-state-default hira truong"><div>びゃ</div><div class=romaji>bya</div></li>
+<li class="ui-state-default hira truong"><div>びゅ</div><div class=romaji>byu</div></li>
+<li class="ui-state-default hira truong"><div>びょ</div><div class=romaji>byo</div></li>
+<li class="ui-state-default hira truong"><div>ぴゃ</div><div class=romaji>pya</div></li>
+<li class="ui-state-default hira truong"><div>ぴゅ</div><div class=romaji>pyu</div></li>
+<li class="ui-state-default hira truong"><div>ぴょ</div><div class=romaji>pyo</div></li>
+<li class="ui-state-default kata"><div>ア</div><div class="romaji">a</div></li>
+<li class="ui-state-default kata"><div>イ</div><div class="romaji">i</div></li>
+<li class="ui-state-default kata"><div>ウ</div><div class="romaji">u</div></li>
+<li class="ui-state-default kata"><div>エ</div><div class="romaji">e</div></li>
+<li class="ui-state-default kata"><div>オ</div><div class="romaji">o</div></li>
+<li class="ui-state-default kata"><div>カ</div><div class="romaji">ka</div></li>
+<li class="ui-state-default kata"><div>キ</div><div class="romaji">ki</div></li>
+<li class="ui-state-default kata"><div>ク</div><div class="romaji">ku</div></li>
+<li class="ui-state-default kata"><div>ケ</div><div class="romaji">ke</div></li>
+<li class="ui-state-default kata"><div>コ</div><div class="romaji">ko</div></li>
+<li class="ui-state-default kata"><div>サ</div><div class="romaji">sa</div></li>
+<li class="ui-state-default kata"><div>シ</div><div class="romaji">shi</div></li>
+<li class="ui-state-default kata"><div>ス</div><div class="romaji">su</div></li>
+<li class="ui-state-default kata"><div>セ</div><div class="romaji">se</div></li>
+<li class="ui-state-default kata"><div>ソ</div><div class="romaji">so</div></li>
+<li class="ui-state-default kata"><div>タ</div><div class="romaji">ta</div></li>
+<li class="ui-state-default kata"><div>チ</div><div class="romaji">chi</div></li>
+<li class="ui-state-default kata"><div>ツ</div><div class="romaji">tsu</div></li>
+<li class="ui-state-default kata"><div>テ</div><div class="romaji">te</div></li>
+<li class="ui-state-default kata"><div>ト</div><div class="romaji">to</div></li>
+<li class="ui-state-default kata"><div>ナ</div><div class="romaji">na</div></li>
+<li class="ui-state-default kata"><div>ニ</div><div class="romaji">ni</div></li>
+<li class="ui-state-default kata"><div>ヌ</div><div class="romaji">nu</div></li>
+<li class="ui-state-default kata"><div>ネ</div><div class="romaji">ne</div></li>
+<li class="ui-state-default kata"><div>ノ</div><div class="romaji">no</div></li>
+<li class="ui-state-default kata"><div>ハ</div><div class="romaji">ha</div></li>
+<li class="ui-state-default kata"><div>ヒ</div><div class="romaji">hi</div></li>
+<li class="ui-state-default kata"><div>フ</div><div class="romaji">fu</div></li>
+<li class="ui-state-default kata"><div>ヘ</div><div class="romaji">he</div></li>
+<li class="ui-state-default kata"><div>ホ</div><div class="romaji">ho</div></li>
+<li class="ui-state-default kata"><div>マ</div><div class="romaji">ma</div></li>
+<li class="ui-state-default kata"><div>ミ</div><div class="romaji">mi</div></li>
+<li class="ui-state-default kata"><div>ム</div><div class="romaji">mu</div></li>
+<li class="ui-state-default kata"><div>メ</div><div class="romaji">me</div></li>
+<li class="ui-state-default kata"><div>モ</div><div class="romaji">mo</div></li>
+<li class="ui-state-default kata"><div>ヤ</div><div class="romaji">ya</div></li>
+<li class="ui-state-default kata"><div>ユ</div><div class="romaji">yu</div></li>
+<li class="ui-state-default kata"><div>ヨ</div><div class="romaji">yo</div></li>
+<li class="ui-state-default kata"><div>ラ</div><div class="romaji">ra</div></li>
+<li class="ui-state-default kata"><div>リ</div><div class="romaji">ri</div></li>
+<li class="ui-state-default kata"><div>ル</div><div class="romaji">ru</div></li>
+<li class="ui-state-default kata"><div>レ</div><div class="romaji">re</div></li>
+<li class="ui-state-default kata"><div>ロ</div><div class="romaji">ro</div></li>
+<li class="ui-state-default kata"><div>ワ</div><div class="romaji">wa</div></li>
+<li class="ui-state-default kata"><div>ヲ</div><div class="romaji">o</div></li>
+<li class="ui-state-default kata"><div>ン</div><div class="romaji">n</div></li>
+<li class="ui-state-default kata dau"><div>ガ</div><div class="romaji">ga</div></li>
+<li class="ui-state-default kata dau"><div>ギ</div><div class="romaji">gi</div></li>
+<li class="ui-state-default kata dau"><div>グ</div><div class="romaji">gu</div></li>
+<li class="ui-state-default kata dau"><div>ゲ</div><div class="romaji">ge</div></li>
+<li class="ui-state-default kata dau"><div>ゴ</div><div class="romaji">go</div></li>
+<li class="ui-state-default kata dau"><div>ザ</div><div class="romaji">za</div></li>
+<li class="ui-state-default kata dau"><div>ジ</div><div class="romaji">ji</div></li>
+<li class="ui-state-default kata dau"><div>ズ</div><div class="romaji">zu</div></li>
+<li class="ui-state-default kata dau"><div>ゼ</div><div class="romaji">ze</div></li>
+<li class="ui-state-default kata dau"><div>ゾ</div><div class="romaji">zo</div></li>
+<li class="ui-state-default kata dau"><div>ダ</div><div class="romaji">da</div></li>
+<li class="ui-state-default kata dau"><div>ヂ</div><div class="romaji">ji</div></li>
+<li class="ui-state-default kata dau"><div>ヅ</div><div class="romaji">zu</div></li>
+<li class="ui-state-default kata dau"><div>デ</div><div class="romaji">de</div></li>
+<li class="ui-state-default kata dau"><div>ド</div><div class="romaji">do</div></li>
+<li class="ui-state-default kata dau"><div>バ</div><div class="romaji">ba</div></li>
+<li class="ui-state-default kata dau"><div>ビ</div><div class="romaji">bi</div></li>
+<li class="ui-state-default kata dau"><div>ブ</div><div class="romaji">bu</div></li>
+<li class="ui-state-default kata dau"><div>ベ</div><div class="romaji">be</div></li>
+<li class="ui-state-default kata dau"><div>ボ</div><div class="romaji">bo</div></li>
+<li class="ui-state-default kata dau"><div>パ</div><div class="romaji">pa</div></li>
+<li class="ui-state-default kata dau"><div>ピ</div><div class="romaji">pi</div></li>
+<li class="ui-state-default kata dau"><div>プ</div><div class="romaji">pu</div></li>
+<li class="ui-state-default kata dau"><div>ペ</div><div class="romaji">pe</div></li>
+<li class="ui-state-default kata dau"><div>ポ</div><div class="romaji">po</div></li>
+<li class="ui-state-default kata truong"><div>キャ</div><div class="romaji">kya</div></li>
+<li class="ui-state-default kata truong"><div>キュ</div><div class="romaji">kyu</div></li>
+<li class="ui-state-default kata truong"><div>キョ</div><div class="romaji">kyo</div></li>
+<li class="ui-state-default kata truong"><div>シャ</div><div class="romaji">sha</div></li>
+<li class="ui-state-default kata truong"><div>シュ</div><div class="romaji">shu</div></li>
+<li class="ui-state-default kata truong"><div>ショ</div><div class="romaji">sho</div></li>
+<li class="ui-state-default kata truong"><div>チャ</div><div class="romaji">cha</div></li>
+<li class="ui-state-default kata truong"><div>チュ</div><div class="romaji">chu</div></li>
+<li class="ui-state-default kata truong"><div>チョ</div><div class="romaji">cho</div></li>
+<li class="ui-state-default kata truong"><div>ニャ</div><div class="romaji">nya</div></li>
+<li class="ui-state-default kata truong"><div>ニュ</div><div class="romaji">nyu</div></li>
+<li class="ui-state-default kata truong"><div>ニョ</div><div class="romaji">nyo</div></li>
+<li class="ui-state-default kata truong"><div>ヒャ</div><div class="romaji">hya</div></li>
+<li class="ui-state-default kata truong"><div>ヒュ</div><div class="romaji">hyu</div></li>
+<li class="ui-state-default kata truong"><div>ヒョ</div><div class="romaji">hyo</div></li>
+<li class="ui-state-default kata truong"><div>ミャ</div><div class="romaji">mya</div></li>
+<li class="ui-state-default kata truong"><div>ミュ</div><div class="romaji">myu</div></li>
+<li class="ui-state-default kata truong"><div>ミョ</div><div class="romaji">myo</div></li>
+<li class="ui-state-default kata truong"><div>リャ</div><div class="romaji">rya</div></li>
+<li class="ui-state-default kata truong"><div>リュ</div><div class="romaji">ryu</div></li>
+<li class="ui-state-default kata truong"><div>リョ</div><div class="romaji">ryo</div></li>
+<li class="ui-state-default kata truong"><div>ギャ</div><div class="romaji">gya</div></li>
+<li class="ui-state-default kata truong"><div>ギュ</div><div class="romaji">gyu</div></li>
+<li class="ui-state-default kata truong"><div>ギョ</div><div class="romaji">gyo</div></li>
+<li class="ui-state-default kata truong"><div>ジャ</div><div class="romaji">ja</div></li>
+<li class="ui-state-default kata truong"><div>ジュ</div><div class="romaji">ju</div></li>
+<li class="ui-state-default kata truong"><div>ジョ</div><div class="romaji">jo</div></li>
+<li class="ui-state-default kata truong"><div>ビャ</div><div class="romaji">bya</div></li>
+<li class="ui-state-default kata truong"><div>ビュ</div><div class="romaji">byu</div></li>
+<li class="ui-state-default kata truong"><div>ビョ</div><div class="romaji">byo</div></li>
+<li class="ui-state-default kata truong"><div>ピャ</div><div class="romaji">pya</div></li>
+<li class="ui-state-default kata truong"><div>ピュ</div><div class="romaji">pyu</div></li>
+<li class="ui-state-default kata truong"><div>ピョ</div><div class="romaji">pyo</div></li>
+</ol>
+<audio style="display:none;" id=myAudio src="amthanh/aa.mp3" controls> </audio>
+  <script>
+  var time;
+	var arrmain = $('#selectable li');
+  $( function() {
+    $( "#selectable" ).selectable({
+		filter: "li",
+	  selecting: function( event, ui ) {
+	  text = $(ui.selecting).find('.romaji').text();
+	  if(text.length == 1) {
+		myFunction(text+text);
+	  } else {
+		switch(text) {
+		  case 'fu':
+			text = "hu";
+			break;
+		  case 'shi':
+			text = "si";
+			break;
+		  case 'chi':
+			text = "ti";
+			break;
+		  case 'tsu':
+			text = "tu";
+			break;
+		  default:
+			break;
+		}
+		myFunction(text);
+	  }
+	  clearTimeout(time);
+	  time = setTimeout(function(){ $('.ui-selected').removeClass('ui-selected'); }, 2000);
+	  }
+	});
+  } );
+  function myFunction(s) {
+	  var x = $("#myAudio");
+	  x.attr("src", "amthanh/" + s + ".mp3");
+	  x[0].play();
+	}
+	
+// $( "#selectable" ).selectable( "destroy" );
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+// Used like so
+arr = shuffle(arrmain);
+texthtml = '';
+var myStringArray = ["Hello","World"];
+var arrayLength = arr.length;
+for (var i = 0; i < arrayLength; i++) {
+	texthtml += arr[i].outerHTML;
+}
+$('#selectable').html(texthtml);
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
