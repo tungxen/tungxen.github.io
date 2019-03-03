@@ -24,6 +24,15 @@ word-break: keep-all;
 
 </head>
 <body>
+<button onclick="reset()">reset</button>
+<select id="mySelect">
+  <option value="all">all</option>
+  <option value="hira">hiragana</option>
+  <option value="kata">katagana</option>
+  <option value="chinh">chinh</option>
+  <option value="truong">truong</option>
+  <option value="dau">dau</option>
+</select>
 <ol id="selectable">
 <li class="ui-state-default hira"><div>あ</div><div class=romaji>a</div></li>
 <li class="ui-state-default hira"><div>い</div><div class=romaji>i</div></li>
@@ -272,34 +281,35 @@ word-break: keep-all;
 	  time = setTimeout(function(){ $('.ui-selected').removeClass('ui-selected'); }, 2000);
 	  }
 	}); */
-	$('.ui-state-default').click(function (){
-		$('.ui-state-default.ui-selected').removeClass('ui-selected');
-		$(this).addClass('ui-selected');
-			  text = $(this).find('.romaji').text();
-		  if(text.length == 1) {
-			myFunction(text+text);
-		  } else {
-			switch(text) {
-			  case 'fu':
-				text = "hu";
-				break;
-			  case 'shi':
-				text = "si";
-				break;
-			  case 'chi':
-				text = "ti";
-				break;
-			  case 'tsu':
-				text = "tu";
-				break;
-			  default:
-				break;
-			}
-			myFunction(text);
-		  }
-		  clearTimeout(time);
-		  time = setTimeout(function(){ $('.ui-selected').removeClass('ui-selected'); }, 2000);
-	});
+	$( "body" ).on( "click", ".ui-state-default", function() {
+
+			$('.ui-state-default.ui-selected').removeClass('ui-selected');
+			$(this).addClass('ui-selected');
+				  text = $(this).find('.romaji').text();
+			  if(text.length == 1) {
+				myFunction(text+text);
+			  } else {
+				switch(text) {
+				  case 'fu':
+					text = "hu";
+					break;
+				  case 'shi':
+					text = "si";
+					break;
+				  case 'chi':
+					text = "ti";
+					break;
+				  case 'tsu':
+					text = "tu";
+					break;
+				  default:
+					break;
+				}
+				myFunction(text);
+			  }
+			  clearTimeout(time);
+			  time = setTimeout(function(){ $('.ui-selected').removeClass('ui-selected'); }, 2000);
+		});
   } );
   
   function myFunction(s) {
@@ -324,14 +334,48 @@ function shuffle(array) {
   return array;
 }
 // Used like so
-arr = shuffle(arrmain);
-texthtml = '';
-var myStringArray = ["Hello","World"];
-var arrayLength = arr.length;
-for (var i = 0; i < arrayLength; i++) {
-	texthtml += arr[i].outerHTML;
+function reset(){
+	arr = shuffle(arrmain);
+	texthtml = '';
+	var myStringArray = ["Hello","World"];
+	var arrayLength = arr.length;
+	for (var i = 0; i < arrayLength; i++) {
+		texthtml += arr[i].outerHTML;
+	}
+	$('#selectable').html(texthtml);
 }
-$('#selectable').html(texthtml);
+reset();
+$('#mySelect').change(function(){
+	
+	switch($(this).val()) {
+	  case 'all':
+		$('.ui-state-default').show();
+		break;
+	  case 'hira':
+		$('.ui-state-default').hide();
+		$('.ui-state-default.hira').show();
+		break;
+	  case 'kata':
+		$('.ui-state-default').hide();
+		$('.ui-state-default.kata').show();
+	  case 'truong':
+		var a = $('.ui-state-default.truong:visible');
+		$('.ui-state-default').hide();
+		a.show();
+		break;
+	  case 'dau':
+		var a = $('.ui-state-default.dau:visible');
+		$('.ui-state-default').hide();
+		a.show();
+		break;
+	  case 'chinh':
+		$('.ui-state-default.truong').hide();
+		$('.ui-state-default.dau').hide();
+		break;
+	  default:
+		break;
+	}
+});
   </script>
 </body>
 </html>
