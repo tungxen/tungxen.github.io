@@ -241,6 +241,9 @@ word-break: keep-all;
   $( function() {
     $( "#selectable" ).selectable({
 		filter: "li",
+	    selected: function(event, ui) { 
+        $(ui.selected).addClass("ui-selected").siblings().removeClass("ui-selected");           
+    } ,
 	  selecting: function( event, ui ) {
 	  text = $(ui.selecting).find('.romaji').text();
 	  if(text.length == 1) {
