@@ -29,9 +29,12 @@ word-break: keep-all;
   <option value="all">all</option>
   <option value="hira">hiragana</option>
   <option value="kata">katagana</option>
-  <option value="chinh">chinh</option>
-  <option value="truong">truong</option>
-  <option value="dau">dau</option>
+  <option value="chinh_hira">chinh hiragana</option>
+  <option value="chinh_kata">chinh katagana</option>
+  <option value="truong_hira">truong hiragana</option>
+  <option value="truong_kata">truong katagana</option>
+  <option value="dau_hira">dau hiragana</option>
+  <option value="dau_kata">dau katagana</option>
 </select>
 <ol id="selectable">
 <li class="ui-state-default hira"><div>あ</div><div class=romaji>a</div></li>
@@ -343,6 +346,7 @@ function reset(){
 		texthtml += arr[i].outerHTML;
 	}
 	$('#selectable').html(texthtml);
+	$('#mySelect').change();
 }
 reset();
 $('#mySelect').change(function(){
@@ -358,17 +362,32 @@ $('#mySelect').change(function(){
 	  case 'kata':
 		$('.ui-state-default').hide();
 		$('.ui-state-default.kata').show();
-	  case 'truong':
-		var a = $('.ui-state-default.truong:visible');
-		$('.ui-state-default').hide();
-		a.show();
 		break;
-	  case 'dau':
-		var a = $('.ui-state-default.dau:visible');
+	  case 'truong_hira':
 		$('.ui-state-default').hide();
-		a.show();
+		$('.ui-state-default.truong.hira').show();
 		break;
-	  case 'chinh':
+	  case 'truong_kata':
+		$('.ui-state-default').hide();
+		$('.ui-state-default.truong.kata').show();
+		break;
+	  case 'dau_hira':
+		$('.ui-state-default').hide();
+		$('.ui-state-default.dau.hira').show();
+		break;
+	  case 'dau_kata':
+		$('.ui-state-default').hide();
+		var a = $('.ui-state-default.dau.kata').show();
+		break;
+	  case 'chinh_hira':
+		$('.ui-state-default').hide();
+		$('.ui-state-default.hira').show();
+		$('.ui-state-default.truong').hide();
+		$('.ui-state-default.dau').hide();
+		break;
+	  case 'chinh_kata':
+		$('.ui-state-default').hide();
+		$('.ui-state-default.kata').show();
 		$('.ui-state-default.truong').hide();
 		$('.ui-state-default.dau').hide();
 		break;
