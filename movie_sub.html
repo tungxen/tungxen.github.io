@@ -11,6 +11,27 @@ $(document).ready(function(){
 		$('#textsource').val(name);
 	}
 	var video = document.getElementById('video');
+  document.onkeydown = function(event) {
+      switch (event.keyCode) {
+         case 37:
+              event.preventDefault();
+              
+              vid_currentTime = video.currentTime;
+              video.currentTime = vid_currentTime - 5;
+            break;
+         
+         case 39:
+              event.preventDefault();
+              
+              vid_currentTime = video.currentTime;
+              video.currentTime = vid_currentTime + 5;
+            break;
+         
+      }
+  };
+  
+  
+  
 	var source = document.createElement('source');
 	$("#targettrack").hover(function(){
 	  video.pause();
