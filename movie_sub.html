@@ -49,7 +49,7 @@ $(document).ready(function(){
 arraymain = []; 
 function SomTre(){
 $('#targettrack').text('' )
-somtre = parseFloat($('#somtre').val());
+somtre = Math.round(parseFloat($('#somtre').val()) * 100) / 100;
 if (arraymain.length > 0) {
 i = 0;
 	  for (var j = 0; j < textTrack.cues.length; ++j) {
