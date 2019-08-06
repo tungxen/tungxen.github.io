@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+var textTrack;
+$(document).ready(function(){
+
+	var name = JSON.parse(localStorage.getItem('name'));
+	if (name) {
+		$('#textsource').val(name);
+	}
+	var video = document.getElementById('video');
+	var source = document.createElement('source');
+	$("#targettrack").hover(function(){
+	  video.pause();
+	},
+	function(){
+	  //video.play();
+	});
+		textTracks = video.textTracks; // one for each track 
+		textTrack = textTracks[0];
+	
+	$("#clickme").click(function(){
+	
+	localStorage.setItem('name', JSON.stringify($('#textsource').val()));
+	  $("#videosource").attr('src',$('#textsource').val());
+	  textTrackMain = textTrack;
+	  // $("#videotrack").attr('src','developerStories-subtitles-en.vtt');
+	  SomTre();
+	  video.load();
+	  video.play();
+		textTrack.oncuechange = function (){
+		  // "this" is a textTrack
+		  var cue = this.activeCues[0]; // assuming there is only one active cue
+		  //var obj = JSON.parse(cue.text);
+		  if (cue){
+		   $('#targettrack').text(cue.text)
+		  }
+		  // do something
+		}
+		
+	});
+	$("#btnfull").click(function(){
+		$('#parent')[0].webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+	});
+});
+
+arraymain = []; 
+function SomTre(){
+$('#targettrack').text('' )
+somtre = parseFloat($('#somtre').val());
+if (arraymain.length > 0) {
+i = 0;
+	  for (var j = 0; j < textTrack.cues.length; ++j) {
+	  
+			  var cue = textTrack.cues[j];
+			  textTrack.cues[j].startTime = arraymain[i] + somtre;
+			  i++;
+			  textTrack.cues[j].endTime = arraymain[i] + somtre;
+			  i++;
+			  
+		//console.log(cue.startTime);
+			  // do something
+	}
+} else {
+	  for (var j = 0; j < textTrack.cues.length; ++j) {
+			  var cue = textTrack.cues[j];
+		arraymain.push(cue.startTime); 
+		arraymain.push(cue.endTime)
+			  textTrack.cues[j].startTime = cue.startTime + somtre;; 
+			  textTrack.cues[j].endTime = cue.endTime + somtre;
+		// console.log(textTrack.cues[j].startTime);
+		if (j == 0)
+			$('#firsttext').text(cue.startTime + '::' + cue.text);
+			  // do something
+	}
+}
+
+}
+</script>
+<style type="text/css" >
+video::-webkit-media-controls-fullscreen-button {
+    display: none;
+}
+:not(:root):-webkit-full-screen video{
+	height: 100% !important;
+}
+video::cue {
+opacity: 0;
+  background-color: black;
+  font-size: 20px !important;
+  display: none;
+}
+</style>
+</head>
+<body>
+<input onclick="$('#khung').toggle()" type=button value="den" />
+<input id=btnfull type=button value="full me" />
+<input id=textsource type=text value="https://www.html5rocks.com/en/tutorials/track/basics/treeOfLife/video/developerStories-en.webm" />
+<input id=clickme type=button value="click me" />
+
+<input type="file" id="selectedFile" onchange='openFile(event)' style="display: none;" />
+<input type="button" value="Browse..." onclick="document.getElementById('selectedFile').click();" />
+    -sub bi cham
+	<input type="text" style="width:50px" id="somtre"  value=0>nhanh <input id=apdung onclick=SomTre() type=button value="ap dung" />
+	<span id=firsttext></span>
+	
+	
+	
+	
+	
+	<div id=parent style="position: relative; background-color:black">
+		<div id=targettrack style="position: absolute; top:10px;  position: absolute; 
+ z-index:9999999999; text-align: center;
+left: 50%;
+    transform: translate(-50%, 0); color:black; font-size:22px;
+	background-color: rgba(0, 0, 0, 0.4);
+color: white;
+
+	"></div>
+		<video onfullscreenchange="alert('s')" id=video height="630px" controls style="margin: 0 auto; display:block">
+		  <source id=videosource src="" >
+		  <track id=videotrack src="" label="English subtitles" kind="subtitles" srclang="en" default="">
+		</video>
+	</div>
+<div onclick="$(this).toggle();" id=khung style="display:none; width:100%; height:697px; position: absolute; top:0px; left:0px; background-color: black; clip-path: polygon(0% 0%, 0% 100%, 2% 100%, 2% 5%, 98% 5%, 98% 95%, 2% 95%, 2% 100%, 100% 100%, 100% 0%);">
+  </div>
+    <script>
+      var openFile = function(event) {
+        var input = event.target;
+
+        var reader = new FileReader();
+        reader.onload = function(){
+          var text = reader.result;
+			 var type = 'text/html';
+			 var filetmp = new Blob([text], {
+						type: type
+					   });
+		objectURL = URL.createObjectURL(filetmp);
+	  $("#videotrack").attr('src',objectURL);
+          //var node = document.getElementById('output');
+          //node.innerText = text;
+          //console.log(reader.result.substring(0, 200));
+        };
+			//console.log(objectURL);
+        //reader.readAsArrayBuffer(input.files[0]);
+        reader.readAsText(input.files[0]);
+      };
+    </script>
+</body>
+</html>
