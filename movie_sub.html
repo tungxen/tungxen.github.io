@@ -11,8 +11,15 @@ $(document).ready(function(){
 		$('#textsource').val(name);
 	}
 	var video = document.getElementById('video');
+	video.addEventListener('focus',function(){this.blur();},false);
   document.onkeydown = function(event) {
       switch (event.keyCode) {
+         case 32:  
+			 if (video.paused)
+			  video.play();
+			else
+			  video.pause();
+            break;
          case 37:
               event.preventDefault();
               
@@ -140,7 +147,7 @@ left: 50%;
 color: white;
 
 	"></div>
-		<video onfullscreenchange="alert('s')" id=video height="630px" controls style="margin: 0 auto; display:block">
+		<video onkeydown="return false;" onkeyup="return false;" onkeypress="return false;" id=video height="630px" controls style="margin: 0 auto; display:block">
 		  <source id=videosource src="" >
 		  <track id=videotrack src="" label="English subtitles" kind="subtitles" srclang="en" default="">
 		</video>
