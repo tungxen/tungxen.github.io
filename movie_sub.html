@@ -46,7 +46,24 @@ function copyTextToClipboard(text) {
   document.body.removeChild(textArea);
 }
 
-
+function luitoi(b) {
+	      switch (b) {
+         case 1:
+              event.preventDefault();
+              
+              vid_currentTime = video.currentTime;
+              video.currentTime = vid_currentTime - 5;
+            break;
+         
+         case 2:
+              event.preventDefault();
+              
+              vid_currentTime = video.currentTime;
+              video.currentTime = vid_currentTime + 5;
+            break;
+         
+      }
+}
 
 
 $(document).ready(function(){
@@ -181,7 +198,10 @@ opacity: 0;
 <input type="button" value="Browse..." onclick="document.getElementById('selectedFile').click();" />
     -sub bi cham
 	<input type="text" style="width:50px" id="somtre"  value=0>nhanh <input id=apdung onclick=SomTre() type=button value="ap dung" />
+	<input type="button" value="lui" onclick="luitoi(1)" />
+	<input type="button" value="toi" onclick="luitoi(2)" />
 	<span id=firsttext style="font-size:12px"></span>
+	
 	
 	
 	
