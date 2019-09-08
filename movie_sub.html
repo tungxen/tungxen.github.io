@@ -30,7 +30,7 @@ function copyTextToClipboard(text) {
 
 
   textArea.value = text;
-	localStorage.setItem('copy', text);
+	localStorage.setItem('copy', JSON.stringify(text));
   document.body.appendChild(textArea);
   textArea.focus();
   textArea.select();
