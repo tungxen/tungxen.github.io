@@ -11,8 +11,9 @@
 window.addEventListener("storage", myFunction);
 
 function myFunction(event) {
-  var x = "Key: " + event.key;
-  document.getElementById("demo").innerHTML = x;
+
+		var url = 'https://jisho.org/search/' + e.newValue;
+		document.getElementById('ifjisho').src=url;
 }
 
 function changeValue() {
