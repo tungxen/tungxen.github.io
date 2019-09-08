@@ -1,7 +1,26 @@
 <!DOCTYPE html>
 <html>
 <body>
+<p>The key property belongs to the Storage Event object, and returns the name of the item that was changed.</p>
 
+<button onclick="changeValue()">Change a Storage Item</button>
+
+<p id="demo"></p>
+
+<script>
+window.addEventListener("storage", myFunction);
+
+function myFunction(event) {
+  var x = "Key: " + event.key;
+  document.getElementById("demo").innerHTML = x;
+}
+
+function changeValue() {
+  //var x = window.open("", "myWindow", "width=200,height=100");
+  localStorage.setItem("mytime", Date.now());
+  //x.close();
+}
+</script>
 <iframe id=ifjisho width="100%" height="650px" src="https://jisho.org/">
   <p>Your browser does not support iframes.</p>
 </iframe>
