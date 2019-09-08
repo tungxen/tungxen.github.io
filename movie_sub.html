@@ -30,7 +30,7 @@ function copyTextToClipboard(text) {
 
 
   textArea.value = text;
-
+	localStorage.setItem('copy', text);
   document.body.appendChild(textArea);
   textArea.focus();
   textArea.select();
@@ -216,7 +216,7 @@ color: white;
 
 	"></div>
 		<video onkeydown="return false;" onkeyup="return false;" onkeypress="return false;" id=video height="630px" controls style="margin: 0 auto; display:block">
-		  <source id=videosource src="" >
+		  <source id=videosource src="D:\subnhat\7.mp4" >
 		  <track id=videotrack src="" label="English subtitles" kind="subtitles" srclang="en" default="">
 		</video>
 	</div>
