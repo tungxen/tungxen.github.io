@@ -6,8 +6,8 @@
   <p>Your browser does not support iframes.</p>
 </iframe>
 <script>
-var url = 'https://jisho.org/search/' + e.newValue;
 	window.onstorage = function(e) {
+		var url = 'https://jisho.org/search/' + e.newValue;
 		document.getElementById('ifjisho').src=url;
 	};
 </script>
