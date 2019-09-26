@@ -41,7 +41,7 @@ function show(that) {
       panel.style.display = "block";
     }
   }
-$.getJSON('https://tungxen.github.io/jp.html', function(data) {
+$.getJSON('https://tungxen.github.io/jp.json', function(data) {
 	$.each( data, function( key, value ) {
 		$.each( value, function( k, v ) {
 			$( 'body' ).append( '<button class="accordion" onclick=show(this)>'+ v.jp+'<br/>'+ v.jp1 +'</button>' +  '<div class="panel"> <p>'+ v.en+'</p> <p>'+ v.vi+'</p> </div>');
