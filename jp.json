@@ -1,21 +1,21 @@
 {
 	"item1": [{
-				"jp": "tung",
-				"jp1": "a",
-				"en": "en b",
-				"vi": "vi c"
+				"jp": "ほうこく",
+				"jp1": "報告",
+				"en": "report; information",
+				"vi": "báo cáo; thông tin"
 			},
 			{
-				"jp": "tung2",
-				"jp1": "a2",
-				"en": "en b2",
-				"vi": "vi c2"
+				"jp": "けっか",
+				"jp1": "結果",
+				"en": "result; consequence; outcome; effect",
+				"vi": "kết quả; kết quả; kết quả; hiệu ứng"
 			},
 			{
-				"jp": "tung2",
-				"jp1": "a2",
-				"en": "en b2",
-				"vi": "vi c2"
+				"jp": "ひがいしゃ",
+				"jp1": "被害者",
+				"en": "victim; injured party; sufferer",
+				"vi": "nạn nhân; bên bị thiệt hại; đau khổ"
 			}
 		]
 }
