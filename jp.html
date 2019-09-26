@@ -49,7 +49,7 @@ function show(that) {
 $.getJSON('https://tungxen.github.io/jp.json', function(data) {
 	$.each( data, function( key, value ) {
 		$.each( value, function( k, v ) {
-			$( 'body' ).append( '<button class="accordion" onclick=show(this)>'+ v.jp+'<br/>'+ v.jp1 +'</button>' +  '<div class="panel"> <p>'+ v.en+'</p> <p>'+ v.vi+'</p> </div>');
+			$( 'body' ).append( '<div class="accordion" onclick=show(this)>'+ v.jp+'<br/>'+ v.jp1 +'</div>' +  '<div class="panel"> <p>'+ v.en+'</p> <p>'+ v.vi+'</p> </div>');
 		});
 	});
 });
