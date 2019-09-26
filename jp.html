@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style>
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+</style>
+</head>
+<body>
+<script>
+function show(that) {
+	console.log(that)
+    //this.classList.toggle("active");
+    var panel = that.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  }
+var json = {
+"item1": [
+		{
+			"jp": "tung",
+			"jp1": "a",
+			"en": "en b",
+			"vi": "vi c"
+		},
+		{
+			"jp": "tung2",
+			"jp1": "a2",
+			"en": "en b2",
+			"vi": "vi c2"
+		}
+	]
+}
+$.each( json, function( key, value ) {
+	$.each( value, function( k, v ) {
+		$( 'body' ).append( '<button class="accordion" onclick=show(this)>'+ v.jp+'<br/>'+ v.jp1 +'</button>' +  '<div class="panel"> <p>'+ v.en+'</p> <p>'+ v.vi+'</p> </div>');
+	});
+});
+</script>
+
+</body>
+</html>
