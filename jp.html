@@ -41,16 +41,14 @@ function show(that) {
       panel.style.display = "block";
     }
   }
-	var json ={};
 $.getJSON('https://tungxen.github.io/jp.html', function(data) {
-	json = data;
-});
-
-$.each( json, function( key, value ) {
-	$.each( value, function( k, v ) {
-		$( 'body' ).append( '<button class="accordion" onclick=show(this)>'+ v.jp+'<br/>'+ v.jp1 +'</button>' +  '<div class="panel"> <p>'+ v.en+'</p> <p>'+ v.vi+'</p> </div>');
+	$.each( data, function( key, value ) {
+		$.each( value, function( k, v ) {
+			$( 'body' ).append( '<button class="accordion" onclick=show(this)>'+ v.jp+'<br/>'+ v.jp1 +'</button>' +  '<div class="panel"> <p>'+ v.en+'</p> <p>'+ v.vi+'</p> </div>');
+		});
 	});
 });
+
 </script>
 
 </body>
