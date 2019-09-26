@@ -41,30 +41,11 @@ function show(that) {
       panel.style.display = "block";
     }
   }
-$.getJSON('http://time.jsontest.com', function(data) {
-	var text = `Date: ${data.date}<br>
-		    Time: ${data.time}<br>
-		    Unix time: ${data.milliseconds_since_epoch}`
-
-
-	alert(text);
+	var json ={};
+$.getJSON('https://tungxen.github.io/jp.html', function(data) {
+	json = data;
 });
-var json = {
-"item1": [
-		{
-			"jp": "tung",
-			"jp1": "a",
-			"en": "en b",
-			"vi": "vi c"
-		},
-		{
-			"jp": "tung2",
-			"jp1": "a2",
-			"en": "en b2",
-			"vi": "vi c2"
-		}
-	]
-}
+
 $.each( json, function( key, value ) {
 	$.each( value, function( k, v ) {
 		$( 'body' ).append( '<button class="accordion" onclick=show(this)>'+ v.jp+'<br/>'+ v.jp1 +'</button>' +  '<div class="panel"> <p>'+ v.en+'</p> <p>'+ v.vi+'</p> </div>');
