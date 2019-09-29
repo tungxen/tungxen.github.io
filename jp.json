@@ -1,21 +1,94 @@
 {
-	"item1": [{
-				"jp": "ほうこく",
-				"jp1": "報告",
-				"en": "report; information",
-				"vi": "báo cáo; thông tin"
-			},
-			{
-				"jp": "けっか",
-				"jp1": "結果",
-				"en": "result; consequence; outcome; effect",
-				"vi": "kết quả; kết quả; kết quả; hiệu ứng"
-			},
-			{
-				"jp": "ひがいしゃ",
-				"jp1": "被害者",
-				"en": "victim; injured party; sufferer",
-				"vi": "nạn nhân; bên bị thiệt hại; đau khổ"
-			}
+	"item1": [
+			 {
+			   "jp": "そうさ",
+			   "jp1": "捜査",
+			   "en": "search (esp. in criminal investigations); investigation; inquiry; enquiry",
+			   "vi": "tìm kiếm (đặc biệt trong điều tra tội phạm); cuộc điều tra; điều tra; điều tra"
+			 },
+			 {
+			   "jp": "ほうこくしょ",
+			   "jp1": "報告書",
+			   "en": "(written) report",
+			   "vi": "(viết) báo cáo"
+			 },
+			 {
+			   "jp": "てんさい",
+			   "jp1": "天才",
+			   "en": "genius; prodigy; natural gift",
+			   "vi": "Thiên tài; thần đồng; món quà tự nhiên"
+			 },
+			 {
+			   "jp": "たんてい",
+			   "jp1": "探偵",
+			   "en": "detective; sleuth; investigator",
+			   "vi": "thám tử; thám tử; điều tra viên"
+			 },
+			 {
+			   "jp": "きぞく",
+			   "jp1": "貴族",
+			   "en": "noble; aristocrat; peer",
+			   "vi": "cao thượng; quý tộc; ngang nhau"
+			 },
+			 {
+			   "jp": "じょゆう",
+			   "jp1": "女優",
+			   "en": "actress",
+			   "vi": "nữ diễn viên"
+			 },
+			 {
+			   "jp": "にんき",
+			   "jp1": "人気",
+			   "en": "popularity; public favor",
+			   "vi": "phổ biến; ủng hộ công chúng"
+			 },
+			 {
+			   "jp": "さつがい",
+			   "jp1": "殺害",
+			   "en": "killing; murder",
+			   "vi": "giết chóc; giết người"
+			 },
+			 {
+			   "jp": "めいたんてい",
+			   "jp1": "名探偵",
+			   "en": "great detective",
+			   "vi": "thám tử vĩ đại"
+			 },
+			 {
+			   "jp": "すがた",
+			   "jp1": "姿",
+			   "en": "figure; form; shape",
+			   "vi": "nhân vật; hình thức; hình dạng"
+			 },
+			 {
+			   "jp": "はんにん",
+			   "jp1": "犯人",
+			   "en": "offender; criminal; culprit",
+			   "vi": "người phạm tội; hình sự; thủ phạm"
+			 },
+			 {
+			   "jp": "つか",
+			   "jp1": "捕まえる",
+			   "en": "to catch; to arrest; to seize",
+			   "vi": "để bắt; bắt giữ; để nắm bắt"
+			 },
+			 {
+			   "jp": "しんぱいしょう",
+			   "jp1": "心配性",
+			   "en": "prone to worrying",
+			   "vi": "dễ lo lắng"
+			 },
+			 {
+			   "jp": "ひつぜん",
+			   "jp1": "必然",
+			   "en": "inevitable; necessary; certain; sure",
+			   "vi": "chắc chắn xảy ra; cần thiết; nhất định; chắc chắn rồi"
+			 },
+			 {
+			   "jp": "けいれい",
+			   "jp1": "敬礼",
+			   "en": "salute; bow.chào nghiêm; cây cung",
+			   "vi": ""
+			 }
 		]
 }
