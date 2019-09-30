@@ -1,94 +1,278 @@
 {
 	"item1": [
-			 {
-			   "jp": "そうさ",
-			   "jp1": "捜査",
-			   "en": "search (esp. in criminal investigations); investigation; inquiry; enquiry",
-			   "vi": "tìm kiếm (đặc biệt trong điều tra tội phạm); cuộc điều tra; điều tra; điều tra"
-			 },
-			 {
-			   "jp": "ほうこくしょ",
-			   "jp1": "報告書",
-			   "en": "(written) report",
-			   "vi": "(viết) báo cáo"
-			 },
-			 {
-			   "jp": "てんさい",
-			   "jp1": "天才",
-			   "en": "genius; prodigy; natural gift",
-			   "vi": "Thiên tài; thần đồng; món quà tự nhiên"
-			 },
-			 {
-			   "jp": "たんてい",
-			   "jp1": "探偵",
-			   "en": "detective; sleuth; investigator",
-			   "vi": "thám tử; thám tử; điều tra viên"
-			 },
-			 {
-			   "jp": "きぞく",
-			   "jp1": "貴族",
-			   "en": "noble; aristocrat; peer",
-			   "vi": "cao thượng; quý tộc; ngang nhau"
-			 },
-			 {
-			   "jp": "じょゆう",
-			   "jp1": "女優",
-			   "en": "actress",
-			   "vi": "nữ diễn viên"
-			 },
-			 {
-			   "jp": "にんき",
-			   "jp1": "人気",
-			   "en": "popularity; public favor",
-			   "vi": "phổ biến; ủng hộ công chúng"
-			 },
-			 {
-			   "jp": "さつがい",
-			   "jp1": "殺害",
-			   "en": "killing; murder",
-			   "vi": "giết chóc; giết người"
-			 },
-			 {
-			   "jp": "めいたんてい",
-			   "jp1": "名探偵",
-			   "en": "great detective",
-			   "vi": "thám tử vĩ đại"
-			 },
-			 {
-			   "jp": "すがた",
-			   "jp1": "姿",
-			   "en": "figure; form; shape",
-			   "vi": "nhân vật; hình thức; hình dạng"
-			 },
-			 {
-			   "jp": "はんにん",
-			   "jp1": "犯人",
-			   "en": "offender; criminal; culprit",
-			   "vi": "người phạm tội; hình sự; thủ phạm"
-			 },
-			 {
-			   "jp": "つか",
-			   "jp1": "捕まえる",
-			   "en": "to catch; to arrest; to seize",
-			   "vi": "để bắt; bắt giữ; để nắm bắt"
-			 },
-			 {
-			   "jp": "しんぱいしょう",
-			   "jp1": "心配性",
-			   "en": "prone to worrying",
-			   "vi": "dễ lo lắng"
-			 },
-			 {
-			   "jp": "ひつぜん",
-			   "jp1": "必然",
-			   "en": "inevitable; necessary; certain; sure",
-			   "vi": "chắc chắn xảy ra; cần thiết; nhất định; chắc chắn rồi"
-			 },
-			 {
-			   "jp": "けいれい",
-			   "jp1": "敬礼",
-			   "en": "salute; bow.chào nghiêm; cây cung",
-			   "vi": ""
-			 }
-		]
+   {
+      "jp": "そうさ",
+      "jp1": "捜査",
+      "en": "search (esp. in criminal investigations); investigation; inquiry; enquiry",
+      "vn": "tìm kiếm (đặc biệt trong điều tra tội phạm); cuộc điều tra; điều tra; điều tra"
+   },
+   {
+      "jp": "ほうこくしょ",
+      "jp1": "報告書",
+      "en": "(written) report",
+      "vn": "(viết) báo cáo"
+   },
+   {
+      "jp": "てんさい",
+      "jp1": "天才",
+      "en": "genius; prodigy; natural gift",
+      "vn": "Thiên tài; thần đồng; món quà tự nhiên"
+   },
+   {
+      "jp": "たんてい",
+      "jp1": "探偵",
+      "en": "detective; sleuth; investigator",
+      "vn": "thám tử; thám tử; điều tra viên"
+   },
+   {
+      "jp": "きぞく",
+      "jp1": "貴族",
+      "en": "noble; aristocrat; peer",
+      "vn": "cao thượng; quý tộc; ngang nhau"
+   },
+   {
+      "jp": "じょゆう",
+      "jp1": "女優",
+      "en": "actress",
+      "vn": "nữ diễn viên"
+   },
+   {
+      "jp": "にんき",
+      "jp1": "人気",
+      "en": "popularity; public favor",
+      "vn": "phổ biến; ủng hộ công chúng"
+   },
+   {
+      "jp": "さつがい",
+      "jp1": "殺害",
+      "en": "killing; murder",
+      "vn": "giết chóc; giết người"
+   },
+   {
+      "jp": "めいたんてい",
+      "jp1": "名探偵",
+      "en": "great detective",
+      "vn": "thám tử vĩ đại"
+   },
+   {
+      "jp": "すがた",
+      "jp1": "姿",
+      "en": "figure; form; shape",
+      "vn": "nhân vật; hình thức; hình dạng"
+   },
+   {
+      "jp": "はんにん",
+      "jp1": "犯人",
+      "en": "offender; criminal; culprit",
+      "vn": "người phạm tội; hình sự; thủ phạm"
+   },
+   {
+      "jp": "つか",
+      "jp1": "捕まえる",
+      "en": "to catch; to arrest; to seize",
+      "vn": "để bắt; bắt giữ; để nắm bắt"
+   },
+   {
+      "jp": "しんぱいしょう",
+      "jp1": "心配性",
+      "en": "prone to worrying",
+      "vn": "dễ lo lắng"
+   },
+   {
+      "jp": "ひつぜん",
+      "jp1": "必然",
+      "en": "inevitable; necessary; certain; sure",
+      "vn": "chắc chắn xảy ra; cần thiết; nhất định; chắc chắn rồi"
+   },
+   {
+      "jp": "けいれい",
+      "jp1": "敬礼",
+      "en": "salute; bow",
+      "vn": "chào nghiêm; cây cung"
+   },
+   {
+      "jp": "やしき",
+      "jp1": "屋敷",
+      "en": "residence; estate; grounds; premises; mansion",
+      "vn": "nơi cư trú; di sản; căn cứ; cơ sở; biệt thự"
+   },
+   {
+      "jp": "しっか",
+      "jp1": "確り",
+      "en": "tightly (holding on); firmly; securely",
+      "vn": "chặt chẽ (giữ chặt); vững chắc; an toàn"
+   },
+   {
+      "jp": "かんし",
+      "jp1": "監視",
+      "en": "monitoring; watching; observation; surveillance; guarding; supervision; lookout",
+      "vn": "giám sát; xem; quan sát; giám sát; canh gác; giám sát; coi chừng"
+   },
+   {
+      "jp": "はんこう",
+      "jp1": "犯行",
+      "en": "crime; criminal act; offence; offense",
+      "vn": "tội ác; hành động tội phạm; xúc phạm; xúc phạm"
+   },
+   {
+      "jp": "しょうこ",
+      "jp1": "証拠",
+      "en": "evidence; proof",
+      "vn": "chứng cớ; bằng chứng"
+   },
+   {
+      "jp": "きび",
+      "jp1": "厳しい",
+      "en": "severe; strict; rigid; unsparing; relentless",
+      "vn": "nghiêm trọng; nghiêm khắc; cứng rắn; không tiết kiệm; không ngừng"
+   },
+   {
+      "jp": "ゆうぐうそち",
+      "jp1": "優遇措置",
+      "en": "preferential treatment; privilege; favor; benefit; incentive",
+      "vn": "ưu đãi; đặc quyền; ủng hộ; lợi ích; khích lệ"
+   },
+   {
+      "jp": "すわ",
+      "jp1": "座る",
+      "en": "to sit; to squat",
+      "vn": "ngồi; ngồi xổm"
+   },
+   {
+      "jp": "どうぜん",
+      "jp1": "同然",
+      "en": "similar to; same; right; proper; just; natural",
+      "vn": "tương tự như; tương tự; đúng; đúng đắn; chỉ; tự nhiên"
+   },
+   {
+      "jp": "うつく",
+      "jp1": "美しい",
+      "en": "beautiful; pretty; lovely; sweet; pure (heart",
+      "vn": " friendship",
+      "column4": " etc.)",
+      "column5": "đẹp; đẹp; đáng yêu; ngọt; thuần khiết (trái tim",
+      "column6": " tình bạn",
+      "column7": " v.v.)"
+   },
+   {
+      "jp": "おんがく",
+      "jp1": "音楽",
+      "en": "music",
+      "vn": "Âm nhạc"
+   },
+   {
+      "jp": "こうちゃ",
+      "jp1": "紅茶",
+      "en": "black tea",
+      "vn": "trà đen"
+   },
+   {
+      "jp": "やしき",
+      "jp1": "屋敷",
+      "en": "residence; estate; grounds; premises; mansion",
+      "vn": "nơi cư trú; di sản; căn cứ; cơ sở; biệt thự"
+   },
+   {
+      "jp": "だっそう",
+      "jp1": "脱走",
+      "en": "escape; flight; breakout; fleeing; desertion",
+      "vn": "bỏ trốn; chuyến bay; đột phá; chạy trốn; đào ngũ"
+   },
+   {
+      "jp": "ほうほう",
+      "jp1": "方法",
+      "en": "method; process; manner; way; means; technique",
+      "vn": "phương pháp; quá trình; cách thức; đường; có nghĩa; kỹ thuật"
+   },
+   {
+      "jp": "じょうだん",
+      "jp1": "冗談",
+      "en": "jest; joke; funny story",
+      "vn": "trò đùa; trò đùa; chuyện vui"
+   },
+   {
+      "jp": "めでと",
+      "jp1": "お目出度う",
+      "en": "congratulations!; an auspicious occasion!",
+      "vn": "Xin chúc mừng!; một dịp tốt lành!"
+   },
+   {
+      "jp": "しもん",
+      "jp1": "指紋",
+      "en": "fingerprint",
+      "vn": "dấu vân tay"
+   },
+   {
+      "jp": "ぼうはん",
+      "jp1": "防犯カメラ",
+      "en": "security camera",
+      "vn": "camera an ninh"
+   },
+   {
+      "jp": "へた",
+      "jp1": "下手",
+      "en": "unskillful; poor; awkward",
+      "vn": "không có kỹ năng; nghèo; vụng về"
+   },
+   {
+      "jp": "すじが",
+      "jp1": "筋書き",
+      "en": "synopsis; outline; plot",
+      "vn": "tóm tắc; đề cương; âm mưu"
+   },
+   {
+      "jp": "ふざけ",
+      "jp1": "巫山戯る",
+      "en": "to joke; to jest; to kid; to josh",
+      "vn": "để đùa; giỡn thôi; để trẻ con; để nói"
+   },
+   {
+      "jp": "ばあい",
+      "jp1": "場合",
+      "en": "case; situation",
+      "vn": "trường hợp; tình hình"
+   },
+   {
+      "jp": "しんはんにん",
+      "jp1": "真犯人",
+      "en": "the real criminal; true culprit",
+      "vn": "tên tội phạm thực sự; thủ phạm thực sự"
+   },
+   {
+      "jp": "つか",
+      "jp1": "捕まえる",
+      "en": "to catch; to arrest; to seize",
+      "vn": "để bắt; bắt giữ; để nắm bắt"
+   },
+   {
+      "jp": "しんじつ",
+      "jp1": "真実",
+      "en": "truth; reality",
+      "vn": "sự thật; thực tế"
+   },
+   {
+      "jp": "つ",
+      "jp1": "たどり着く",
+      "en": "to arrive at (after a struggle); to finally reach; to find one's way to; to finally hit on (e.g. an idea)",
+      "vn": "đến (sau một cuộc đấu tranh); để cuối cùng đạt được; để tìm đường đến; để cuối cùng đạt được (ví dụ: một ý tưởng)"
+   },
+   {
+      "jp": "きたい",
+      "jp1": "期待",
+      "en": "expectation; anticipation; hope",
+      "vn": "sự mong đợi; dự đoán; mong"
+   },
+   {
+      "jp": "そうさ",
+      "jp1": "捜査",
+      "en": "search (esp. in criminal investigations); investigation; inquiry; enquiry",
+      "vn": "tìm kiếm (đặc biệt trong điều tra tội phạm); cuộc điều tra; điều tra; điều tra"
+   },
+   {
+      "jp": "もうわけ",
+      "jp1": "申し訳",
+      "en": "apology; excuse",
+      "vn": "lời xin lỗi; tha"
+   }
+]
 }
