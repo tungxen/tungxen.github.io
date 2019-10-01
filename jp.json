@@ -273,6 +273,24 @@
       "jp1": "申し訳",
       "en": "apology; excuse",
       "vn": "lời xin lỗi; tha"
-   }
+   },
+ {
+   "jp": "わだい",
+   "jp1": "話題",
+   "en": "topic; subject",
+   "vn": "đề tài; môn học"
+ },
+ {
+   "jp": "ようぎしゃ",
+   "jp1": "容疑者",
+   "en": "suspect (person)",
+   "vn": "nghi phạm (người)"
+ },
+ {
+   "jp": "あ",
+   "jp1": "飽きる",
+   "en": "to get tired of; to lose interest in; to be fed up with; to have enough",
+   "vn": "mệt mỏi; để mất hứng thú với; chán ngấy với; để có đủ"
+ }
 ]
 }
