@@ -1000,6 +1000,237 @@
    "en": "doubt; suspicion; misgivings; scruples",
    "vn": "nghi ngờ; Nghi ngờ; ngộ nhận; xáo trộn",
    "sen": ""
+ },
+ {
+   "jp": "おど",
+   "jp1": "落ち度",
+   "en": "mistake; error; fault; slip; blunder; omission; oversight; lapse",
+   "vn": "sai lầm; lỗi; lỗi; trượt; sai lầm; bỏ xót; giám sát; trôi đi",
+   "sen": "この事態は私の落ち度でもあります"
+ },
+ {
+   "jp": "めいよ",
+   "jp1": "名誉",
+   "en": "honor; honour; credit; prestige",
+   "vn": "tôn kính; tôn kính; tín dụng; uy tín",
+   "sen": "法門寺家の名と若様の名誉に傷をつけてしまった"
+ },
+ {
+   "jp": "きず",
+   "jp1": "傷",
+   "en": "wound; injury; cut; gash; bruise; scratch; scrape; scar",
+   "vn": "chạm đến; chấn thương; cắt; vết thương; bầm tím; vết trầy; cạo; sẹo",
+   "sen": ""
+ },
+ {
+   "jp": "いのち",
+   "jp1": "命",
+   "en": "life; life force",
+   "vn": "đời sống; sinh lực",
+   "sen": ""
+ },
+ {
+   "jp": "はら",
+   "jp1": "腹",
+   "en": "abdomen; belly; stomach",
+   "vn": "bụng; bụng; cái bụng",
+   "sen": "腹が鳴る"
+ },
+ {
+   "jp": "な",
+   "jp1": "鳴る",
+   "en": "to sound; to ring; to resound; to echo; to roar; to rumble",
+   "vn": "nghe; để gọi; để vang lên; để vang vọng; gầm lên; ầm ầm",
+   "sen": "腹が鳴る"
+ },
+ {
+   "jp": "かお",
+   "jp1": "香り",
+   "en": "aroma; fragrance; scent; smell",
+   "vn": "hương thơm; hương thơm; hương thơm; mùi",
+   "sen": ""
+ },
+ {
+   "jp": "かんさつ",
+   "jp1": "観察",
+   "en": "observation; survey; watching",
+   "vn": "quan sát; khảo sát; xem",
+   "sen": "見るだけで観察しない"
+ },
+ {
+   "jp": "とくべつ",
+   "jp1": "特別",
+   "en": "special; particular; extraordinary; exceptional; especial",
+   "vn": "đặc biệt; cụ thể; phi thường; phi thường, xuất chúng; đặc biệt",
+   "sen": ""
+ },
+ {
+   "jp": "しょうたい",
+   "jp1": "正体",
+   "en": "true character; true form; true colors (colours); identity; truth (of a mystery, phenomenon, etc.); origin",
+   "vn": "nhân vật thật; hình thức thật; màu sắc trung thực (màu sắc); danh tính; sự thật (của một bí ẩn, hiện tượng, v.v.); gốc",
+   "sen": ""
+ },
+ {
+   "jp": "つ",
+   "jp1": "連れる",
+   "en": "to take (someone) with one; to bring along; to go with; to be accompanied by",
+   "vn": "để lấy (ai đó) với một; mang theo; đi cùng; được đi kèm với",
+   "sen": "連れていけはい"
+ },
+ {
+   "jp": "ひょうばん",
+   "jp1": "評判",
+   "en": "fame; reputation; popularity",
+   "vn": "danh tiếng; uy tín; phổ biến",
+   "sen": "ネットでの私の評判はすごいらしいな"
+ },
+ {
+   "jp": "ちきゅうがい",
+   "jp1": "地球外",
+   "en": "extraterrestrial",
+   "vn": "ngoài trái đất",
+   "sen": ""
+ },
+ {
+   "jp": "うちゅう",
+   "jp1": "宇宙",
+   "en": "universe; cosmos; space",
+   "vn": "vũ trụ; vũ trụ; không gian",
+   "sen": "宇宙征服をもくろんでるとか"
+ },
+ {
+   "jp": "せいふく",
+   "jp1": "征服",
+   "en": "conquest; subjugation; overcoming",
+   "vn": "sự chinh phục; sự khuất phục; khắc phục",
+   "sen": "宇宙征服をもくろんでるとか"
+ },
+ {
+   "jp": "もくろ",
+   "jp1": "目論む",
+   "en": "to plan; to form a plan; to scheme; to envision; to intend to do",
+   "vn": "kế hoạch; để lập một kế hoạch; đề án; Hình dung; có ý định làm",
+   "sen": ""
+ },
+ {
+   "jp": "な",
+   "jp1": "泣く",
+   "en": "to cry; to weep; to sob; to howl",
+   "vn": "khóc; rơi nước mắt; khóc nức nở; tru",
+   "sen": "泣いたか？"
+ },
+ {
+   "jp": "じゅうけつ",
+   "jp1": "充血",
+   "en": "congestion (with blood); hyperemia; hyperaemia",
+   "vn": "xung huyết (có máu); chứng sung huyết; tăng huyết áp",
+   "sen": ""
+ },
+ {
+   "jp": "こえ",
+   "jp1": "声",
+   "en": "voice",
+   "vn": "tiếng nói",
+   "sen": ""
+ },
+ {
+   "jp": "しょせき",
+   "jp1": "書籍",
+   "en": "book; publication",
+   "vn": "sách; sự xuất bản",
+   "sen": ""
+ },
+ {
+   "jp": "まと",
+   "jp1": "纏める",
+   "en": "to collect; to put (it all) together; to integrate; to consolidate; to unify",
+   "vn": "để thu thập; để đặt (tất cả) với nhau; để tích hợp; củng cố; Để thông nhât",
+   "sen": "書籍の一覧です まとめてきました"
+ },
+ {
+   "jp": "つた",
+   "jp1": "伝える",
+   "en": "to convey; to report; to transmit; to communicate; to tell; to impart; to propagate; to teach; to bequeath",
+   "vn": "Truyền tải; báo cáo; để truyền tải; giao tiếp; nói; để truyền đạt; tuyên truyền; dạy; Để thừa kế",
+   "sen": "賢正に伝えてくれ"
+ },
+ {
+   "jp": "なぐ",
+   "jp1": "殴る",
+   "en": "to strike; to hit; to beat; to punch",
+   "vn": "để tấn công; đánh; để đánh bại; đấm",
+   "sen": "賢正さんが殴ってなかったら"
+ },
+ {
+   "jp": "つか",
+   "jp1": "仕える",
+   "en": "to serve; to work for; to attend",
+   "vn": "phục vụ; làm việc cho; tham dự",
+   "sen": "私が お仕えする前か"
+ },
+ {
+   "jp": "ゆうかい",
+   "jp1": "誘拐",
+   "en": "abduction; kidnapping; kidnaping",
+   "vn": "bắt cóc; bắt cóc; bắt cóc",
+   "sen": "ある資産家の娘が誘拐された"
+ },
+ {
+   "jp": "いっしゅうかん",
+   "jp1": "一週間",
+   "en": "one week",
+   "vn": "một tuần",
+   "sen": ""
+ },
+ {
+   "jp": "しんてん",
+   "jp1": "進展",
+   "en": "progress; development",
+   "vn": "phát triển; phát triển",
+   "sen": "１週間たっても進展はなし"
+ },
+ {
+   "jp": "しじ",
+   "jp1": "指示",
+   "en": "indication; denotation; designation",
+   "vn": "sự ảnh hưởng lần nhau; Định nghĩa; chỉ định",
+   "sen": ""
+ },
+ {
+   "jp": "りょうしん",
+   "jp1": "両親",
+   "en": "parents; both parents",
+   "vn": "cha mẹ; cả bố và mẹ",
+   "sen": ""
+ },
+ {
+   "jp": "いらい",
+   "jp1": "依頼",
+   "en": "request; commission; entrusting (with a matter)",
+   "vn": "yêu cầu; Uỷ ban; giao phó (với một vấn đề)",
+   "sen": ""
+ },
+ {
+   "jp": "ともど",
+   "jp1": "取り戻す",
+   "en": "to take back; to regain; to get back; to recover",
+   "vn": "để lấy lại; để lấy lại; để lấy lại; để phục hồi",
+   "sen": "≪(山田)法門寺は わずか６時間で娘も金も無傷で取り戻したそうだ"
+ },
+ {
+   "jp": "しき",
+   "jp1": "指揮",
+   "en": "command; direction",
+   "vn": "chỉ huy; phương hướng",
+   "sen": ""
+ },
+ {
+   "jp": "かんりかん",
+   "jp1": "管理官",
+   "en": "administrator; director; commissioner",
+   "vn": "牛田管理官のキャリアだった",
+   "sen": ""
  }
 ]
 }
