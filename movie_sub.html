@@ -160,7 +160,7 @@ i = 0;
 		}
 	} else {
 		i = arraymain.length - 1;
-	    for (var j = textTrack.length-1; j >=0; j--) {
+	    for (var j = textTrack.cues.length-1; j >=0; j--) {
 			  textTrack.cues[j].endTime = arraymain[i] + somtre;
 			  i--;
 			  textTrack.cues[j].startTime = arraymain[i] + somtre;
