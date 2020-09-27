@@ -113,10 +113,12 @@
 			}
 		}
 		video[0].onpause = function() {
-			if (activeCues) {
-  				copyTextToClipboard(activeCues.text);
-		    	iframe.attr('src', 'https://jisho.org/search/' + activeCues.text);
-			}
+			setTimeout(function(){
+				if (activeCues) {
+	  				copyTextToClipboard(activeCues.text);
+			    	iframe.attr('src', 'https://jisho.org/search/' + activeCues.text);
+				}
+			}, 50);
 		};
 
 		video.on("click", function(e){
