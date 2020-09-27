@@ -29,8 +29,11 @@
 	    <source id="video_source" src="" type="video/mp4">
 	    <track id="video_track" label="japanese" kind="subtitles" src="" srclang="ja" default>
 	</video>
-	<iframe src="https://jisho.org/" title="" width="100%" height="1000px" id="iframe"  style="position: relative; z-index: -1; margin-top: -60px;">
+	<div style="position: relative; z-index: 0; height: calc(100vh - 280px); width: 100%; overflow: visible;">
+		<iframe src="https://jisho.org/" id="iframe"  style="position: absolute; top: 0px; left: 0px; z-index: 1; width: 100%; height: 100%">
 	</iframe>
+	</div>
+	
 	<script type="text/javascript">
 	$(function () {
 		function copyTextToClipboard(text) {
@@ -138,7 +141,7 @@
 				currentTimeOld = currentTime;
 			}
 		};
-		iframe.attr('height', window.innerHeight - $("#video")[0].getBoundingClientRect().bottom);
+		// iframe.attr('height', window.innerHeight - $("#video")[0].getBoundingClientRect().bottom);
 	});
 </script>
 </body>
