@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+	body {
+	   margin: 0;
+	   padding: 0;
+	}
+	#video::cue {
+	    background-color: transparent;
+	    color: #FFF;
+	    font-size: 32px;
+	    font-family: "Lobster", cursive;
+	    margin-top: 0px;
+	    top: 0px;
+	    margin-bottom: 500px;
+	    line-height: 1;
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body style="background-color: black;">
+	<div style="text-align: center;"><span id="targettrack" style="color: white;"></span><span>ら</span></div>
+	<video id="video" width="100%" controls>
+	    <source id="video_source" src="" type="video/mp4">
+	    <track id="video_track" label="japanese" kind="subtitles" src="" srclang="ja" default>
+	</video>
+	<iframe src="https://jisho.org/" title="" width="100%" height="1000px" id="iframe">
+	</iframe>
+	<script type="text/javascript">
+	$(function () {
+		function copyTextToClipboard(text) {
+		  var textArea = document.createElement("textarea");
+		  // Place in top-left corner of screen regardless of scroll position.
+		  textArea.style.position = 'fixed';
+		  textArea.style.top = 0;
+		  textArea.style.left = 0;
+		  // Ensure it has a small width and height. Setting to 1px / 1em
+		  // doesn't work as this gives a negative w/h on some browsers.
+		  textArea.style.width = '2em';
+		  textArea.style.height = '2em';
+		  // We don't need padding, reducing the size if it does flash render.
+		  textArea.style.padding = 0;
+		  // Clean up any borders.
+		  textArea.style.border = 'none';
+		  textArea.style.outline = 'none';
+		  textArea.style.boxShadow = 'none';
+		  // Avoid flash of white box if rendered for any reason.
+		  textArea.style.background = 'transparent';
+		  textArea.value = text;
+		  document.body.appendChild(textArea);
+		  textArea.focus();
+		  textArea.select();
+		  try {
+		    var successful = document.execCommand('copy');
+		    var msg = successful ? 'successful' : 'unsuccessful';
+		    console.log('Copying text command was ' + msg);
+		  } catch (err) {
+		    console.log('Oops, unable to copy');
+		  }
+		  document.body.removeChild(textArea);
+		}
+		var links = [
+		'https://scontent.fdad2-1.fna.fbcdn.net/v/t66.36240-6/10000000_166462011720811_4775204481540438594_n.mp4?_nc_cat=103&_nc_sid=985c63&efg=eyJ2ZW5jb2RlX3RhZyI6Im9lcF9oZCJ9&_nc_ohc=3RTxCBghXAYAX_P-FlT&_nc_ht=scontent.fdad2-1.fna&oh=57779bf7c990603313df9559c97257fd&oe=5F9497DB',
+		'https://scontent.fdad2-1.fna.fbcdn.net/v/t66.36240-6/10000000_362102924790685_59011847993419913_n.mp4?_nc_cat=101&_nc_sid=985c63&efg=eyJ2ZW5jb2RlX3RhZyI6Im9lcF9oZCJ9&_nc_ohc=qhk7FTxXP0kAX9W6I_2&_nc_ht=scontent.fdad2-1.fna&oh=62fdc3d862d1dc66d7195da6de7612a0&oe=5F9457F2'
+		];
+		var tracks = [
+			'[SubtitleTools.com] Clannad_001.vtt',
+			'[SubtitleTools.com] Clannad_002.vtt',
+		];
+		const queryString = window.location.search;
+		const urlParams = new URLSearchParams(queryString);
+		const episode = urlParams.get('episode');
+		var iframe = $('#iframe');
+		var video = $('#video');
+		var videoSource = $('#video_source');
+		videoSource.attr('src', links[episode - 1]);
+		var videoTrack = $('#video_track');
+		var activeCues = null;
+		// var track = videoTrack[0];
+		videoTrack.attr('src', tracks[episode - 1]);
+		// track.activeCues[0].line = 0;
+		video[0].load();
+		const textTracks = video[0].textTracks; // one for each track 
+		textTrack = textTracks[0];
+		var targettrack = $('#targettrack');
+		textTrack.mode = 'hidden';
+		textTrack.oncuechange = function () {
+			activeCues = this.activeCues[0];
+			if (activeCues) {
+				targettrack.html(activeCues.text);
+			} else {
+				targettrack.html('');
+			}
+		}
+		video[0].onpause = function() {
+			if (activeCues) {
+  				copyTextToClipboard(activeCues.text);
+		    	iframe.attr('src', 'https://jisho.org/search/' + activeCues.text);
+			}
+		};
+	});
+</script>
+</body>
+</html>
