@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style type="text/css">
 	body {
 	   margin: 0;
@@ -21,12 +21,15 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body style="background-color: black;">
-	<div style="text-align: center;"><span id="targettrack" style="color: white;"></span><span>ら</span></div>
-	<video id="video" width="100%" controls>
+	<div id="targettrackWrap" style="text-align: center; height: 45px; position: relative;">
+		<span id="targettrack" style="color: white;"></span><span>ら</span>
+		<span id="time" style="color: white; position: absolute; right: 0px; bottom:0px;">0/24</span>
+	</div>
+	<video id="video" width="100%" style="">
 	    <source id="video_source" src="" type="video/mp4">
 	    <track id="video_track" label="japanese" kind="subtitles" src="" srclang="ja" default>
 	</video>
-	<iframe src="https://jisho.org/" title="" width="100%" height="1000px" id="iframe">
+	<iframe src="https://jisho.org/" title="" width="100%" height="1000px" id="iframe"  style="position: relative; z-index: -1; margin-top: -60px;">
 	</iframe>
 	<script type="text/javascript">
 	$(function () {
@@ -73,7 +76,9 @@
 		const urlParams = new URLSearchParams(queryString);
 		const episode = urlParams.get('episode');
 		var iframe = $('#iframe');
+		var targettrackWrap = $('#targettrackWrap');
 		var video = $('#video');
+		var time = $('#time');
 		var videoSource = $('#video_source');
 		videoSource.attr('src', links[episode - 1]);
 		var videoTrack = $('#video_track');
@@ -100,6 +105,40 @@
 		    	iframe.attr('src', 'https://jisho.org/search/' + activeCues.text);
 			}
 		};
+
+		video.on("click", function(e){
+    	  var rect = e.target.getBoundingClientRect();
+		  var x = e.clientX - rect.left; //x position within the element.
+		  var y = e.clientY - rect.top;  //y position within the element.
+		  var width =  Math.floor(rect.width);
+		  if (x >= 0 && x < Math.floor(width/3)) {
+	         video[0].currentTime = video[0].currentTime - 5;
+		  } else if (x >= Math.floor(width/3) && x <= Math.floor((width/3)*2)) {
+        	if (video[0].paused){
+            	video[0].play();
+        	} else {
+            	video[0].pause();
+        	}
+		  } else {
+	         video[0].currentTime = video[0].currentTime + 5;
+		  }
+	    });
+		targettrackWrap.on("click", function(e){
+    	  var rect = e.currentTarget.getBoundingClientRect();
+		  var x = e.clientX - rect.left; //x position within the element.
+		  var y = e.clientY - rect.top;  //y position within the element.
+		 	video[0].currentTime = Math.floor(x * video[0].duration / rect.width);
+	    });
+	    var currentTimeOld = 0;
+		video[0].ontimeupdate = function() {
+			var currentTime = Math.floor(video[0].currentTime);
+			var duration = Math.floor(video[0].duration);
+			if (currentTimeOld != currentTime) {
+				time.text((Math.floor(currentTime/60)) + ':' + (currentTime%60) + '/' + (Math.floor(duration/60)) + ':' + (duration%60));
+				currentTimeOld = currentTime;
+			}
+		};
+		iframe.attr('height', window.innerHeight - $("#video")[0].getBoundingClientRect().bottom);
 	});
 </script>
 </body>
