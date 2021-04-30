@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-var textTrack;
-function copyTextToClipboard(text) {
-  var textArea = document.createElement("textarea");
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		var textTrack;
+		function copyTextToClipboard(text) {
+			var textArea = document.createElement("textarea");
 
   // Place in top-left corner of screen regardless of scroll position.
   textArea.style.position = 'fixed';
@@ -30,81 +30,95 @@ function copyTextToClipboard(text) {
 
 
   textArea.value = text;
-	localStorage.setItem('copy', JSON.stringify(text));
+  localStorage.setItem('copy', JSON.stringify(text));
   document.body.appendChild(textArea);
   textArea.focus();
   textArea.select();
 
   try {
-    var successful = document.execCommand('copy');
-    var msg = successful ? 'successful' : 'unsuccessful';
-    console.log('Copying text command was ' + msg);
+  	var successful = document.execCommand('copy');
+  	var msg = successful ? 'successful' : 'unsuccessful';
+  	console.log('Copying text command was ' + msg);
   } catch (err) {
-    console.log('Oops, unable to copy');
+  	console.log('Oops, unable to copy');
   }
 
   document.body.removeChild(textArea);
 }
 
 function luitoi(b) {
-	      switch (b) {
-         case 1:
-              event.preventDefault();
-              
-              vid_currentTime = video.currentTime;
-              video.currentTime = vid_currentTime - 5;
-            break;
-         
-         case 2:
-              event.preventDefault();
-              
-              vid_currentTime = video.currentTime;
-              video.currentTime = vid_currentTime + 5;
-            break;
-         
-      }
+	switch (b) {
+		case 1:
+		event.preventDefault();
+
+		vid_currentTime = video.currentTime;
+		video.currentTime = vid_currentTime - 5;
+		break;
+
+		case 2:
+		event.preventDefault();
+
+		vid_currentTime = video.currentTime;
+		video.currentTime = vid_currentTime + 5;
+		break;
+
+	}
 }
 
 
 $(document).ready(function(){
-
 	var name = JSON.parse(localStorage.getItem('name'));
 	if (name) {
 		$('#textsource').val(name);
 	}
 	var video = document.getElementById('video');
 	video.onpause = function() {
-  copyTextToClipboard($('#targettrack').text());
+		copyTextToClipboard($('#targettrack').text());
 
-};
+	};
 	video.addEventListener('focus',function(){this.blur();},false);
-  document.onkeydown = function(event) {
-      switch (event.keyCode) {
-         case 32:  
-			 if (video.paused)
-			  video.play();
+	document.onkeydown = function(event) {
+		switch (event.keyCode) {
+			case 32:  
+			if (video.paused)
+				video.play();
 			else
-			  video.pause();
-            break;
-         case 37:
-              event.preventDefault();
-              
-              vid_currentTime = video.currentTime;
-              video.currentTime = vid_currentTime - 5;
-            break;
-         
-         case 39:
-              event.preventDefault();
-              
-              vid_currentTime = video.currentTime;
-              video.currentTime = vid_currentTime + 5;
-            break;
-         
+				video.pause();
+			break;
+			case 37:
+			event.preventDefault();
+
+			vid_currentTime = video.currentTime;
+			video.currentTime = vid_currentTime - 5;
+			break;
+
+			case 39:
+			event.preventDefault();
+
+			vid_currentTime = video.currentTime;
+			video.currentTime = vid_currentTime + 5;
+			break;
+
+		}
+
+	};
+
+
+
+
+  $(video).click(function(e) {
+      const rect = this.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      if (x < rect.width/3) {
+        e.preventDefault();
+        luitoi(1);
+      } else if (x > rect.width * 2/3) {
+        e.preventDefault();
+        luitoi(2);
+      } else {
       }
-  };
-  
-  
-  
+  });
+
 	var source = document.createElement('source');
 	$("#targettrack").hover(function(){
 	  // video.pause();
@@ -114,106 +128,106 @@ $(document).ready(function(){
 	});
 		textTracks = video.textTracks; // one for each track 
 		textTrack = textTracks[0];
-	
-	$("#clickme").click(function(){
-	
-	localStorage.setItem('name', JSON.stringify($('#textsource').val()));
-	  $("#videosource").attr('src',$('#textsource').val());
-	  textTrackMain = textTrack;
+
+		$("#clickme").click(function(){
+
+			localStorage.setItem('name', JSON.stringify($('#textsource').val()));
+			$("#videosource").attr('src',$('#textsource').val());
+			textTrackMain = textTrack;
 	  // $("#videotrack").attr('src','developerStories-subtitles-en.vtt');
 	  SomTre();
 	  video.load();
 	  video.play();
-		textTrack.oncuechange = function (){
+	  textTrack.oncuechange = function (){
 		  // "this" is a textTrack
 		  var cue = this.activeCues[0]; // assuming there is only one active cue
 		  //var obj = JSON.parse(cue.text);
 		  if (cue){
-		   $('#targettrack').text(cue.text)
+		  	$('#targettrack').text(cue.text)
 		  } else {
-		   $('#targettrack').text('');
+		  	$('#targettrack').text('');
 		  }
 		  // do something
 		}
 		
 	});
-	$("#btnfull").click(function(){
-		$('#parent')[0].webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+		$("#btnfull").click(function(){
+			$('#parent')[0].webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+		});
 	});
-});
 
 arraymain = []; 
 function SomTre(){
-$('#targettrack').text('' )
-somtre = Math.round(parseFloat($('#somtre').val()) * 100) / 100;
-if (arraymain.length > 0) {
-i = 0;
-	if(somtre <= 0) {
-	    for (var j = 0; j < textTrack.cues.length; j++) {
-	  
-			  var cue = textTrack.cues[j];
-			  textTrack.cues[j].startTime = arraymain[i] + somtre;
-			  i++;
-			  textTrack.cues[j].endTime = arraymain[i] + somtre;
-			  i++;
-			  
+	$('#targettrack').text('' )
+	somtre = Math.round(parseFloat($('#somtre').val()) * 100) / 100;
+	if (arraymain.length > 0) {
+		i = 0;
+		if(somtre <= 0) {
+			for (var j = 0; j < textTrack.cues.length; j++) {
+
+				var cue = textTrack.cues[j];
+				textTrack.cues[j].startTime = arraymain[i] + somtre;
+				i++;
+				textTrack.cues[j].endTime = arraymain[i] + somtre;
+				i++;
+
 		//console.log(cue.startTime);
 			  // do something
+			}
+		} else {
+			i = arraymain.length - 1;
+			for (var j = textTrack.cues.length-1; j >=0; j--) {
+				textTrack.cues[j].endTime = arraymain[i] + somtre;
+				i--;
+				textTrack.cues[j].startTime = arraymain[i] + somtre;
+				i--;
+			}
 		}
 	} else {
-		i = arraymain.length - 1;
-	    for (var j = textTrack.cues.length-1; j >=0; j--) {
-			  textTrack.cues[j].endTime = arraymain[i] + somtre;
-			  i--;
-			  textTrack.cues[j].startTime = arraymain[i] + somtre;
-			  i--;
-		}
-	}
-} else {
-	  for (var j = 0; j < textTrack.cues.length; j++) {
-			  var cue = textTrack.cues[j];
-		arraymain.push(cue.startTime); 
-		arraymain.push(cue.endTime)
-			  textTrack.cues[j].startTime = cue.startTime + somtre;; 
-			  textTrack.cues[j].endTime = cue.endTime + somtre;
+		for (var j = 0; j < textTrack.cues.length; j++) {
+			var cue = textTrack.cues[j];
+			arraymain.push(cue.startTime); 
+			arraymain.push(cue.endTime)
+			textTrack.cues[j].startTime = cue.startTime + somtre;; 
+			textTrack.cues[j].endTime = cue.endTime + somtre;
 		// console.log(textTrack.cues[j].startTime);
 		if (j == 0)
 			$('#firsttext').text(cue.startTime + '::' + cue.text);
 			  // do something
-	}
-}
+			}
+		}
 
-}
+	}
 </script>
 <style type="text/css" >
-video::-webkit-media-controls-fullscreen-button {
-    display: none;
-}
-:not(:root):-webkit-full-screen video{
-	height: 100% !important;
-}
-video::cue {
-opacity: 0;
-  background-color: black;
-  font-size: 20px !important;
-  display: none;
-} 
-video {
-	height: 730px;
-	width: 1111px;
-} 	
+	video::-webkit-media-controls-fullscreen-button {
+		display: none;
+	}
+	:not(:root):-webkit-full-screen video{
+		height: 100% !important;
+	}
+	video::cue {
+		opacity: 0;
+		background-color: black;
+		font-size: 20px !important;
+		display: none;
+	} 
+	video {
+		height: 730px;
+		width: 1111px;
+	} 	
 	body {background-color: black;}
 </style>
 </head>
 <body>
-<input onclick="$('#khung').toggle()" type=button value="den" />
-<input id=btnfull type=button value="full me" />
-<input id=textsource type=text value="https://www.html5rocks.com/en/tutorials/track/basics/treeOfLife/video/developerStories-en.webm" />
-<input id=clickme type=button value="click me" />
+	<input onclick="$('#khung').toggle()" type=button value="den" />
+	<input id=btnfull type=button value="full me" />
+	<input id=textsource type=text value="https://www.html5rocks.com/en/tutorials/track/basics/treeOfLife/video/developerStories-en.webm" />
+	<input id=clickme type=button value="click me" />
 
-<input type="file" id="selectedFile" onchange='openFile(event)' style="display: none;" />
-<input type="button" value="Browse..." onclick="document.getElementById('selectedFile').click();" />
-    -sub bi cham
+	<input type="file" id="selectedFile" onchange='openFile(event)' style="display: none;" />
+	<input type="button" value="Browse..." onclick="document.getElementById('selectedFile').click();" />
+	-sub bi cham
 	<input type="text" style="width:50px" id="somtre"  value=0>nhanh <input id=apdung onclick=SomTre() type=button value="ap dung" />
 
 	<span id=firsttext style="font-size:12px"></span>
@@ -225,43 +239,43 @@ video {
 	
 	<div id=parent style="position: relative; background-color:black">
 		<div id=targettrack style="position: absolute; top:10px;  position: absolute; 
- z-index:9999999999; text-align: center;
-left: 50%;
-    transform: translate(-50%, 0); color:black; font-size:22px;
-	background-color: rgba(0, 0, 0, 0.4);
-color: white;
+		z-index:9999999999; text-align: center;
+		left: 50%;
+		transform: translate(-50%, 0); color:black; font-size:22px;
+		background-color: rgba(0, 0, 0, 0.4);
+		color: white;
 
-	"></div>
+		"></div>
 		<video onkeydown="return false;" onkeyup="return false;" onkeypress="return false;" id=video height="630px" controls style="margin: 0 auto; display:block">
-		  <source id=videosource src="D:\subnhat\7.mp4" >
-		  <track id=videotrack src="" label="English subtitles" kind="subtitles" srclang="en" default="">
-		</video>
-	</div>
-<div onclick="$(this).toggle();" id=khung style="display:none; width:100%; height:697px; position: absolute; top:0px; left:0px; background-color: black; clip-path: polygon(0% 0%, 0% 100%, 2% 100%, 2% 5%, 98% 5%, 98% 95%, 2% 95%, 2% 100%, 100% 100%, 100% 0%);">
-  </div>
-		<input type="button" value="lui......." onclick="luitoi(1)" />
-	<input type="button" value="toi" onclick="luitoi(2)" />
-    <script>
-      var openFile = function(event) {
-        var input = event.target;
+			<source id=videosource src="D:\subnhat\7.mp4" >
+				<track id=videotrack src="" label="English subtitles" kind="subtitles" srclang="en" default="">
+				</video>
+			</div>
+			<div onclick="$(this).toggle();" id=khung style="display:none; width:100%; height:697px; position: absolute; top:0px; left:0px; background-color: black; clip-path: polygon(0% 0%, 0% 100%, 2% 100%, 2% 5%, 98% 5%, 98% 95%, 2% 95%, 2% 100%, 100% 100%, 100% 0%);">
+			</div>
+			<input type="button" value="lui......." onclick="luitoi(1)" />
+			<input type="button" value="toi" onclick="luitoi(2)" />
+			<script>
+				var openFile = function(event) {
+					var input = event.target;
 
-        var reader = new FileReader();
-        reader.onload = function(){
-          var text = reader.result;
-			 var type = 'text/html';
-			 var filetmp = new Blob([text], {
-						type: type
-					   });
-		objectURL = URL.createObjectURL(filetmp);
-	  $("#videotrack").attr('src',objectURL);
+					var reader = new FileReader();
+					reader.onload = function(){
+						var text = reader.result;
+						var type = 'text/html';
+						var filetmp = new Blob([text], {
+							type: type
+						});
+						objectURL = URL.createObjectURL(filetmp);
+						$("#videotrack").attr('src',objectURL);
           //var node = document.getElementById('output');
           //node.innerText = text;
           //console.log(reader.result.substring(0, 200));
-        };
+      };
 			//console.log(objectURL);
         //reader.readAsArrayBuffer(input.files[0]);
         reader.readAsText(input.files[0]);
-      };
-    </script>
+    };
+</script>
 </body>
 </html>
