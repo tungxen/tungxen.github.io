@@ -109,10 +109,10 @@ $(document).ready(function(){
   $(video).click(function(e) {
       const rect = this.getBoundingClientRect();
       const x = e.clientX - rect.left;
-      if (x < rect.width/3) {
+      if (x < (rect.width/3) - 100) {
         e.preventDefault();
         luitoi(1);
-      } else if (x > rect.width * 2/3) {
+      } else if (x > (rect.width * 2/3) + 100) {
         e.preventDefault();
         luitoi(2);
       } else {
