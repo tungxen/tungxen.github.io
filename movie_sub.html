@@ -160,6 +160,19 @@ arraymain = [];
 function SomTre(){
 	$('#targettrack').text('' )
 	somtre = Math.round(parseFloat($('#somtre').val()) * 100) / 100;
+	if (arraymain.length == 0) {
+		for (var j = 0; j < textTrack.cues.length; j++) {
+			var cue = textTrack.cues[j];
+			arraymain.push(cue.startTime); 
+			arraymain.push(cue.endTime)
+			textTrack.cues[j].startTime = cue.startTime + somtre;; 
+			textTrack.cues[j].endTime = cue.endTime + somtre;
+			// console.log(textTrack.cues[j].startTime);
+			if (j == 0)
+				$('#firsttext').text(cue.startTime + '::' + cue.text);
+			  // do something
+		}
+	}
 	if (arraymain.length > 0) {
 		i = 0;
 		if(somtre <= 0) {
@@ -183,21 +196,9 @@ function SomTre(){
 				i--;
 			}
 		}
-	} else {
-		for (var j = 0; j < textTrack.cues.length; j++) {
-			var cue = textTrack.cues[j];
-			arraymain.push(cue.startTime); 
-			arraymain.push(cue.endTime)
-			textTrack.cues[j].startTime = cue.startTime + somtre;; 
-			textTrack.cues[j].endTime = cue.endTime + somtre;
-		// console.log(textTrack.cues[j].startTime);
-		if (j == 0)
-			$('#firsttext').text(cue.startTime + '::' + cue.text);
-			  // do something
-			}
-		}
-
 	}
+
+}
 </script>
 <style type="text/css" >
 	video::-webkit-media-controls-fullscreen-button {
