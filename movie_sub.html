@@ -210,7 +210,6 @@
                 
             }
             video {
-                height: 730px;
                 width: 1111px;
             }
             body {
@@ -219,18 +218,6 @@
         </style>
     </head>
     <body>
-        <input onclick="$('#khung').toggle()" type="button" value="den" />
-        <input id="btnfull" type="button" value="full me" />
-        <input id="textsource" type="text" value="https://www.html5rocks.com/en/tutorials/track/basics/treeOfLife/video/developerStories-en.webm" />
-        <input id="clickme" type="button" value="click me" />
-
-        <input type="file" id="selectedFile" onchange="openFile(event)" style="display: none;" />
-        <input type="button" value="Browse..." onclick="document.getElementById('selectedFile').click();" />
-        -sub bi cham
-        <input type="text" style="width: 50px;" id="somtre" value="0" />nhanh <input id="apdung" onclick="SomTre()" type="button" value="ap dung" />
-
-        <span id="firsttext" style="font-size: 12px;"></span>
-
         <div id="parent" style="position: relative; background-color: black;">
             <div
                 id="targettrack"
@@ -246,8 +233,17 @@
             id="khung"
             style="display: none; width: 100%; height: 697px; position: absolute; top: 0px; left: 0px; background-color: black; clip-path: polygon(0% 0%, 0% 100%, 2% 100%, 2% 5%, 98% 5%, 98% 95%, 2% 95%, 2% 100%, 100% 100%, 100% 0%);"
         ></div>
-        <input type="button" value="lui......." onclick="luitoi(1)" />
-        <input type="button" value="toi" onclick="luitoi(2)" />
+        <input onclick="$('#khung').toggle()" type="button" value="den" />
+        <input id="btnfull" type="button" value="full me" />
+        <input id="textsource" type="text" value="https://www.html5rocks.com/en/tutorials/track/basics/treeOfLife/video/developerStories-en.webm" />
+        <input id="clickme" type="button" value="click me" />
+
+        <input type="file" id="selectedFile" onchange="openFile(event)" style="display: none;" />
+        <input type="button" value="Browse..." onclick="document.getElementById('selectedFile').click();" />
+        -sub bi cham
+        <input type="text" style="width: 50px;" id="somtre" value="0" />nhanh <input id="apdung" onclick="SomTre()" type="button" value="ap dung" />
+
+        <span id="firsttext" style="font-size: 12px;"></span>
         <script>
             var openFile = function (event) {
                 var input = event.target;
