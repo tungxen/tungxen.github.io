@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <style type="text/css">
+        html,body{
+          width: 100%;
+          height: 100%;
+        }
+    </style>
+</head>
+<body>
+ <iframe id="myFrame1" src="https://ncode.syosetu.com/n4185ci/251/" frameborder="0" scrolling="yes" style="height: 100%; width: 49%; float: left; " height="100%" width="49%" align="left"></iframe>
+ <iframe id="myFrame2" src="https://ln.hako.vn/truyen/1879-kuma-kuma-kuma-bear/c53491-chap-247-gau-san-chap-nhan-de-nghi-cua-shia" frameborder="0" scrolling="yes" style="overflow: hidden; height: 100%; width: 49%; " height="100%" width="49%" align="right">
+</iframe>
+<script>
+$(function(){
+    var both = 0;
+    $('#myFrame1').on('load', function(){
+        if (both >= 1) {
+            init();
+        }
+        both++;
+        // $(iframe1).scrollTop(300);
+    });
+    $('#myFrame2').on('load', function(){
+        if (both >= 1) {
+            init();
+        }
+        both++;
+    })
+
+    function init() {
+        console.log('iframe loaded successfully')
+        var iframe1 = $("#myFrame1").contents();
+        var iframe2 = $("#myFrame2").contents();
+        var heightImg = 0;
+        iframe2.find('#chapter-content img').each(function() {
+            heightImg += $(this).height();
+        })
+        var height1 = iframe1.find('#novel_honbun').height();
+        var height2 = iframe2.find('#chapter-content').height() - heightImg - 500;
+
+        console.log(height1, height2, heightImg);
+        $(iframe1).scroll(function () { 
+            // console.log('tung')
+            $(iframe2).scrollTop(Math.floor($(this).scrollTop() * height2 / height1) - 450);
+        });
+    }
+
+    // .load(function(){
+    //     // $(this).show();
+    //     console.log('iframe loaded successfully')
+    // });
+        
+    // $('#click').on('click', function(){
+    //     $('#MainPopupIframe').attr('src', 'https://heera.it');    
+    // });
+});
+    // $('#myFrame2').load(function () {
+    //             console.log('tung');
+
+    //     var iframe = $("#myFrame2").contents();
+    //     console.log(iframe);
+    //     $(iframe).scroll(function () { 
+    //         console.log('tung')
+    //     });
+    // });
+</script>
+</body>
+</html>
